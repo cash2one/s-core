@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../src/main/resources/config.xml.xsd">
+    <commands>
+
+
+        <save-image-command name="imagedata" url="http://habrahabr.ru/core/captcha/"/>
+        <anti-captcha-command name="captcha_response" image="${imagedata}" ext="png" phrase="false"/>
+        <load-useragent-command/>
+    </commands>
+</project>

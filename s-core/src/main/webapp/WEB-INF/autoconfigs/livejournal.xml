@@ -1,0 +1,57 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../config.xml.xsd">
+    <variables>
+        <var type="text" name="login" min="10" max="14"/>
+        <var type="text" name="password" min="6" max="8" appenddigits="true"/>
+        <var type="number" name="bday_dd" min="10" max="28"/>
+        <var type="number" name="bday_mm" min="1" max="12"/>
+        <var type="number" name="bday_yyyy" min="1970" max="1985"/>
+        <var type="constant" name="accounttype" value="Livejournal"/>
+        <var type="constant" name="xmlrpc" value="http://www.livejournal.com/interface/xmlrpc"/>
+        <var type="constant" name="urlpattern" value="http://###.livejournal.com"/>
+    </variables>
+    <commands>
+        <command type="loaduseragent"/>
+        <command type="loadproxy"/>
+        <command type="loademail" prefix="email" host="pop.yandex.ru"/>
+        <!--<command type="request" method="get" url="http://www.livejournal.com/"/>-->
+        <command type="request" method="get" url="https://www.livejournal.com/create.bml">
+            <referer value="http://www.livejournal.com/"/>
+            <extract>
+                <var type="regexp" name="recaptcha_url1" pattern="&quot;(https://api-secure.recaptcha.net/challenge.+?)&quot;"/>
+                <var type="attvalue" name="form_auth" attribute="name" value="lj_form_auth" field="value"/>
+            </extract>
+        </command>
+        <command type="recaptcha" name="recaptcha_challenge1" url="recaptcha_url1" imagevar="recaptcha_response1"/>
+        <command type="request" method="post" url="https://www.livejournal.com/create.bml">
+            <referer value="https://www.livejournal.com/create.bml"/>
+            <post-parameters>
+                <parameter type="var" name="Widget[CreateAccount]_bday_dd" var="bday_dd"/>
+                <parameter type="var" name="Widget[CreateAccount]_bday_mm" var="bday_mm"/>
+                <parameter type="var" name="Widget[CreateAccount]_bday_yyyy" var="bday_yyyy"/>
+                <parameter type="var" name="Widget[CreateAccount]_email" var="email"/>
+                <parameter type="var" name="Widget[CreateAccount]_password1" var="password"/>
+                <parameter type="var" name="Widget[CreateAccount]_password2" var="password"/>
+                <parameter type="constant" name="Widget[CreateAccount]_gender" value="M"/>                
+                <parameter type="constant" name="Widget[CreateAccount]_setLiveId" value="no"/>
+                <parameter type="constant" name="Widget[CreateAccount]_submit" value="Create Account"/>
+                <parameter type="var" name="Widget[CreateAccount]_user" var="login"/>
+                <parameter type="var" name="lj_form_auth" var="form_auth"/>
+                <parameter type="var" name="recaptcha_challenge_field" var="recaptcha_challenge1"/>
+                <parameter type="var" name="recaptcha_response_field" var="recaptcha_response1"/>
+            </post-parameters>
+            <test>
+                <var type="string" value="create/step2"/>
+            </test>
+        </command>
+        <command type="email" sleep="25000" attempts="5">
+            <credential login="emaillogin" password="emailpassword" host="emailhost"/>
+            <extract>
+                <var type="regexp" name="activate_url" pattern="(http://www\.livejournal\.com/confirm/.+)$"/>
+            </extract>
+        </command>
+        <command type="request" method="get" varurl="activate_url"/>
+        <command type="saveblog">
+            <blogaccount type="accounttype" login="login" password="password" url="login" urlpattern="urlpattern" xmlrpcpath="xmlrpc"/>
+        </command>
+    </commands>
+</project>

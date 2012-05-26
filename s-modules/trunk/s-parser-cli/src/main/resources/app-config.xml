@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+    <bean id="pageParser" class="com.seo.text.parse.PageParserImpl"/>
+    <bean id="textParserFacade" class="com.seo.text.parse.TextParserFacadeImpl"/>
+    <bean id="googleNewsParser" class="com.seo.text.link.GoogleNewsParserImpl"/>
+    <bean id="googleNewsProvider" class="com.seo.text.link.GoogleNewsProviderImpl"/>
+</beans>

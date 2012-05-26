@@ -1,0 +1,16 @@
+.header {
+    padding-top: 15px;
+    padding-bottom: 25px;
+    border-top: gray solid;
+    border-top-width: 2px;
+
+    font-weight: bold;
+}
+
+body {
+    background-color: #CFE2E8;
+}
+
+table {
+    background-color: #CFE2E8;
+}

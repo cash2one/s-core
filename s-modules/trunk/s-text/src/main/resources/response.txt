@@ -1,0 +1,474 @@
+                                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                                <html xmlns="http://www.w3.org/1999/xhtml" lang="ru" dir="ltr">
+                                <head>
+                                <title>Похудение — Википедия</title>
+                                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                                <meta http-equiv="Content-Style-Type" content="text/css" />
+                                <meta name="generator" content="MediaWiki 1.16wmf4" />
+                                <link rel="alternate" type="application/x-wiki" title="Править" href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit" />
+                                <link rel="edit" title="Править" href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit" />
+                                <link rel="apple-touch-icon" href="http://ru.wikipedia.org/apple-touch-icon.png" />
+                                <link rel="shortcut icon" href="/favicon.ico" />
+                                <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Википедия (ru)" />
+                                <link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+                                <link rel="alternate" type="application/atom+xml" title="Википедия — Atom-лента" href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:RecentChanges&amp;feed=atom" />
+                                <link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-12" type="text/css" media="screen" />
+                                <link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-12" type="text/css" media="screen" />
+
+                                <link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-12" type="text/css" media="print" />
+                                <link rel="stylesheet" href="/w/extensions/FlaggedRevs/client/flaggedrevs.css?76" type="text/css" media="all" />
+                                <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
+                                <link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
+                                <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
+                                <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
+                                <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
+                                <link rel="stylesheet" href="/w/index.php?title=MediaWiki:Vector.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
+                                <link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" media="all" />
+                                <script type="text/javascript">
+                                var skin="vector",
+                                stylepath="http://bits.wikimedia.org/skins-1.5",
+                                wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+                                wgArticlePath="/wiki/$1",
+                                wgScriptPath="/w",
+                                wgScriptExtension=".php",
+                                wgScript="/w/index.php",
+                                wgVariantArticlePath=false,
+                                wgActionPaths={},
+                                wgServer="http://ru.wikipedia.org",
+                                wgCanonicalNamespace="",
+                                wgCanonicalSpecialPageName=false,
+                                wgNamespaceNumber=0,
+                                wgPageName="Похудение",
+                                wgTitle="Похудение",
+                                wgAction="view",
+                                wgArticleId=264592,
+                                wgIsArticle=true,
+                                wgUserName=null,
+                                wgUserGroups=null,
+                                wgUserLanguage="ru",
+                                wgContentLanguage="ru",
+                                wgBreakFrames=false,
+                                wgCurRevisionId=29359251,
+                                wgVersion="1.16wmf4",
+                                wgEnableAPI=true,
+                                wgEnableWriteAPI=true,
+                                wgSeparatorTransformTable=[",	.", " 	,"],
+                                wgDigitTransformTable=["", ""],
+                                wgMainPageTitle="Заглавная страница",
+                                wgFormattedNamespaces={"-2": "Медиа", "-1": "Служебная", "0": "", "1": "Обсуждение", "2": "Участник", "3": "Обсуждение участника", "4": "Википедия", "5": "Обсуждение Википедии", "6": "Файл", "7": "Обсуждение файла", "8": "MediaWiki", "9": "Обсуждение MediaWiki", "10": "Шаблон", "11": "Обсуждение шаблона", "12": "Справка", "13": "Обсуждение справки", "14": "Категория", "15": "Обсуждение категории", "100": "Портал", "101": "Обсуждение портала"},
+                                wgNamespaceIds={"медиа": -2, "служебная": -1, "": 0, "обсуждение": 1, "участник": 2, "обсуждение_участника": 3, "википедия": 4, "обсуждение_википедии": 5, "файл": 6, "обсуждение_файла": 7, "mediawiki": 8, "обсуждение_mediawiki": 9, "шаблон": 10, "обсуждение_шаблона": 11, "справка": 12, "обсуждение_справки": 13, "категория": 14, "обсуждение_категории": 15, "портал": 100, "обсуждение_портала": 101, "участница": 2, "обсуждение участницы": 3, "изображение": 6, "обсуждение_изображения": 7, "обсуждение_участницы": 3, "вп": 4, "image": 6, "image_talk": 7},
+                                wgSiteName="Википедия",
+                                wgCategories=["Википедия:Нет источников с мая 2009", "Википедия:Статьи с утверждениями без источников более 14 дней", "Википедия:Нет источников с января 2010", "Википедия:Статьи без ссылок на источники", "Диетология", "Ожирение"],
+                                wgDBname="ruwiki",
+                                wgMWSuggestTemplate="http://ru.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
+                                wgSearchNamespaces=[0],
+                                wgMWSuggestMessages=["с советами", "без советов"],
+                                wgRestrictionEdit=[],
+                                wgRestrictionMove=[],
+                                wgFlaggedRevsParams={"tags": {"accuracy": {"levels": 3, "quality": 2, "pristine": 4}}},
+                                wgStableRevisionId=0,
+                                wgWikimediaMobileUrl="http://ru.m.wikipedia.org/wiki",
+                                wgCollapsibleNavBucketTest=false,
+                                wgCollapsibleNavForceNewVersion=false,
+                                wgVectorPreferences={"collapsiblenav": {"enable": 1}, "editwarning": {"enable": 1}, "simplesearch": {"enable": 1, "disablesuggest": 0}},
+                                wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "simplesearch": true},
+                                Geo={"city": "", "country": ""},
+                                wgNoticeProject="wikipedia";
+                                </script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-12" type="text/javascript"></script>
+                                <script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-12"></script>
+                                <script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-12" type="text/javascript"></script>
+                                <script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-12" type="text/javascript"></script>
+
+                                <script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
+                                <script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-12" type="text/javascript"></script>
+                                <script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-12" type="text/javascript"></script>
+                                <script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'Больше языков','vector-editwarning-warning':'Переход на другую страницу может привести к потере сделанных вами изменений.\nЕсли вы зарегистрированы в системе, то вы можете отключить это предупреждение в разделе «Редактирование» ваших настроек.','vector-simplesearch-search':'Поиск','vector-simplesearch-containing':'содержащие…'});</script>
+                                <script src="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:BannerController&amp;cache=/cn.js&amp;283-12" type="text/javascript"></script>
+                                <!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
+                                <script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-12" type="text/javascript"></script>
+
+                                <script type="text/javascript" src="/w/extensions/FlaggedRevs/client/flaggedrevs.js?76"></script>
+                                <script type="text/javascript">FlaggedRevs.messages = {"diffToggleShow": "показать изменения", "diffToggleHide": "скрыть изменения", "logToggleShow": "показать журнал стабилизации", "logToggleHide": "скрыть журнал стабильности", "logDetailsShow": "показать подробности", "logDetailsHide": "скрыть подробности", "toggleShow": "(+)", "toggleHide": "(-)"};</script>
+
+                                </head>
+                                <body class="mediawiki ltr ns-0 ns-subject page-Похудение skin-vector">
+                                		<div id="mw-page-base" class="noprint"></div>
+                                		<div id="mw-head-base" class="noprint"></div>
+                                		<!-- content -->
+                                		<div id="content">
+                                			<a id="top"></a>
+                                			<div id="mw-js-message" style="display:none;"></div>
+                                						<!-- sitenotice -->
+                                			<div id="siteNotice"><!-- centralNotice loads here --></div>
+
+                                			<!-- /sitenotice -->
+                                						<!-- firstHeading -->
+                                			<h1 id="firstHeading" class="firstHeading">Похудение</h1>
+                                			<!-- /firstHeading -->
+                                			<!-- bodyContent -->
+                                			<div id="bodyContent">
+                                				<!-- tagline -->
+                                				<div id="siteSub">Материал из Википедии — свободной энциклопедии</div>
+
+                                				<!-- /tagline -->
+                                				<!-- subtitle -->
+                                				<div id="contentSub"><div id='mw-fr-revisiontag' class='flaggedrevs_short plainlinks noprint'><img class="flaggedrevs-icon" src="/w/extensions/FlaggedRevs/client/img/1.png" alt="Текущая версия" title="Текущая версия" /><b><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0_%D1%81%D1%82%D0%B0%D1%82%D0%B5%D0%B9/%D0%9F%D0%BE%D1%8F%D1%81%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%BB%D1%8F_%D1%87%D0%B8%D1%82%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9" title="Википедия:Проверка статей/Пояснение для читателей">Текущая версия</a></b> (не проверялась)</div></div>
+                                				<!-- /subtitle -->
+                                																<!-- jumpto -->
+                                				<div id="jump-to-nav">
+                                					Перейти к: <a href="#mw-head">навигация</a>,
+                                					<a href="#p-search">поиск</a>
+
+                                				</div>
+                                				<!-- /jumpto -->
+                                								<!-- bodytext -->
+                                				<p><b>Похуде́ние</b>&#160;— снижение массы тела живого организма, имеющее целью его оздоровление, улучшение тонуса и повышение эстетической привлекательности.</p>
+                                <table id="toc" class="toc">
+                                <tr>
+                                <td>
+                                <div id="toctitle">
+                                <h2>Содержание</h2>
+                                </div>
+
+                                <ul>
+                                <li class="toclevel-1 tocsection-1"><a href="#.D0.A6.D0.B5.D0.BB.D1.8C_.D1.81.D0.BD.D0.B8.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BC.D0.B0.D1.81.D1.81.D1.8B_.D1.82.D0.B5.D0.BB.D0.B0"><span class="tocnumber">1</span> <span class="toctext">Цель снижения массы тела</span></a></li>
+                                <li class="toclevel-1 tocsection-2"><a href="#.D0.9D.D0.B0.D1.83.D1.87.D0.BD.D0.BE_.D0.BE.D0.B1.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D1.8B_.D1.81.D0.BD.D0.B8.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BC.D0.B0.D1.81.D1.81.D1.8B_.D1.82.D0.B5.D0.BB.D0.B0"><span class="tocnumber">2</span> <span class="toctext">Научно обоснованные методы снижения массы тела</span></a></li>
+                                <li class="toclevel-1 tocsection-3"><a href="#.D0.A1.D0.BE.D1.86.D0.B8.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.BF.D1.81.D0.B8.D1.85.D0.BE.D0.BB.D0.BE.D0.B3.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.B0.D1.81.D0.BF.D0.B5.D0.BA.D1.82.D1.8B"><span class="tocnumber">3</span> <span class="toctext">Социальные и психологические аспекты</span></a></li>
+                                <li class="toclevel-1 tocsection-4"><a href="#.D0.98.D0.BD.D0.B4.D0.B5.D0.BA.D1.81_.D0.BC.D0.B0.D1.81.D1.81.D1.8B_.D1.82.D0.B5.D0.BB.D0.B0"><span class="tocnumber">4</span> <span class="toctext">Индекс массы тела</span></a></li>
+
+                                <li class="toclevel-1 tocsection-5"><a href="#.D0.9F.D1.80.D0.B0.D0.BA.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.81.D0.BE.D0.B2.D0.B5.D1.82.D1.8B"><span class="tocnumber">5</span> <span class="toctext">Практические советы</span></a></li>
+                                <li class="toclevel-1 tocsection-6"><a href="#.D0.94.D1.80.D1.83.D0.B3.D0.BE.D0.B5"><span class="tocnumber">6</span> <span class="toctext">Другое</span></a></li>
+                                <li class="toclevel-1 tocsection-7"><a href="#.D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0"><span class="tocnumber">7</span> <span class="toctext">Литература</span></a></li>
+                                <li class="toclevel-1 tocsection-8"><a href="#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"><span class="tocnumber">8</span> <span class="toctext">См. также</span></a></li>
+                                </ul>
+
+                                </td>
+                                </tr>
+                                </table>
+                                <script type="text/javascript">
+                                //<![CDATA[
+                                if (window.showTocToggle) { var tocShowText = "показать"; var tocHideText = "убрать"; showTocToggle(); }
+                                //]]>
+                                </script>
+                                <h2><span class="editsection">[<a href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit&amp;section=1" title="Править секцию: Цель снижения массы тела">править</a>]</span> <span class="mw-headline" id=".D0.A6.D0.B5.D0.BB.D1.8C_.D1.81.D0.BD.D0.B8.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BC.D0.B0.D1.81.D1.81.D1.8B_.D1.82.D0.B5.D0.BB.D0.B0">Цель снижения массы тела</span></h2>
+                                <p>Снижение массы тела происходит при многих заболеваниях. Однако, в настоящее время о похудении чаще говорят как о результате сознательных мер в данном направлении.</p>
+                                <p>Для многих людей (прежде всего женщин) борьба с <a href="/wiki/%D0%9E%D0%B6%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B5" title="Ожирение">ожирением</a> (действительным или мнимым) превратилась в своего рода навязчивую идею. Вместо заботы об общем оздоровлении организма они начинают следить исключительно за показаниями стрелки весов. Соответственно, похудение превратилось в прибыльный бизнес. Огромной популярностью пользуются разные «сжигатели жира», «чудодейственные» <a href="/wiki/%D0%94%D0%B8%D0%B5%D1%82%D0%B0" title="Диета">диеты</a>, <a href="/wiki/%D0%9B%D0%B8%D0%BF%D0%BE%D1%81%D0%B0%D0%BA%D1%86%D0%B8%D1%8F" title="Липосакция">липосакция</a> (операции по удалению жира) и т.&#160;п.&#160;— порой наносящие существенный урон <a href="/wiki/%D0%97%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D1%8C%D0%B5" title="Здоровье">здоровью</a>.</p>
+
+                                <h2><span class="editsection">[<a href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit&amp;section=2" title="Править секцию: Научно обоснованные методы снижения массы тела">править</a>]</span> <span class="mw-headline" id=".D0.9D.D0.B0.D1.83.D1.87.D0.BD.D0.BE_.D0.BE.D0.B1.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4.D1.8B_.D1.81.D0.BD.D0.B8.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BC.D0.B0.D1.81.D1.81.D1.8B_.D1.82.D0.B5.D0.BB.D0.B0">Научно обоснованные методы снижения массы тела</span></h2>
+                                <p>Наиболее разумными с научной точки зрения методами снижения веса являются полноценное (по химическому составу) и разнообразное <a href="/wiki/%D0%9F%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5" title="Питание">питание</a> с ограничением общей суточной <a href="/wiki/%D0%9A%D0%B0%D0%BB%D0%BE%D1%80%D0%B8%D0%B9%D0%BD%D0%BE%D1%81%D1%82%D1%8C" title="Калорийность" class="mw-redirect">калорийности</a> рациона в пределах 1600−1700 ккал/сут для худеющего мужчины (для женщины&#160;— 1,300 ккал/сут) и увеличение двигательной активности за счёт физических нагрузок (занятий <a href="/wiki/%D0%A1%D0%BF%D0%BE%D1%80%D1%82" title="Спорт">спортом</a> или <a href="/wiki/%D0%A4%D0%B8%D0%B7%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0" title="Физкультура" class="mw-redirect">физкультурой</a>). При <a href="/wiki/%D0%9E%D0%B6%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B5" title="Ожирение">ожирении</a> III степени суточная калорийность может быть снижена до 1100—1200 ккал, IV степени до 600—700 ккал (последнее обязательно в больнице и не более 1 мес.).<sup><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8" title="Википедия:Ссылки на источники">[<i>источник&#160;не&#160;указан&#160;544&#160;дня</i>]</a></sup></p>
+
+                                <p>Но следует помнить, что при большом весе физические нагрузки могут быть опасными для сердечно-сосудистой системы. Кроме того, снизить вес с помощью физических упражнений возможно лишь в пределах 10&#160;кг, не более.<sup><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8" title="Википедия:Ссылки на источники">[<i>источник&#160;не&#160;указан&#160;301&#160;день</i>]</a></sup></p>
+                                <p>Следует отметить, что помимо снижения калорийности, следует соблюдать опредёленный режим питания и так называемый «водный режим» (т.&#160;е. режим потребления жидкости). Основную часть калорий следует потреблять на завтрак,<sup><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8" title="Википедия:Ссылки на источники">[<i>источник&#160;не&#160;указан&#160;301&#160;день</i>]</a></sup> чтобы успеть их потратить за день. Не рекомендуется потреблять жидкость позднее, чем за 4 часа до сна&#160;— помимо накопления её в организме, перегружаются почки.</p>
+
+                                <h2><span class="editsection">[<a href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit&amp;section=3" title="Править секцию: Социальные и психологические аспекты">править</a>]</span> <span class="mw-headline" id=".D0.A1.D0.BE.D1.86.D0.B8.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B8_.D0.BF.D1.81.D0.B8.D1.85.D0.BE.D0.BB.D0.BE.D0.B3.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.B0.D1.81.D0.BF.D0.B5.D0.BA.D1.82.D1.8B">Социальные и психологические аспекты</span></h2>
+                                <p>Любая диета временна, и впоследствии, без проработки причин набора веса, он в большинстве случаев возвращается, ведь человек как переедал, так и продолжает переедать.</p>
+                                <p>Помимо физиологических причин набора лишнего веса (например, вследствие <a href="/wiki/%D0%AD%D0%BD%D0%B4%D0%BE%D0%BA%D1%80%D0%B8%D0%BD%D0%BD%D1%8B%D0%B5_%D0%B7%D0%B0%D0%B1%D0%BE%D0%BB%D0%B5%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" title="Эндокринные заболевания">гормональных заболеваний</a>), привести к набору лишнего веса могут социальные (привычка поесть «за компанию», еда от скуки) и психологические причины (личная нереализованность, проблемные отношения с близкими, сильный <a href="/wiki/%D0%A1%D1%82%D1%80%D0%B5%D1%81%D1%81" title="Стресс">стресс</a>, одиночество). Поэтому необходимо устранять прежде всего причины переедания&#160;— научиться находить новые источники удовольствия, новые увлечения и развлечения, не имеющие отношения к пище.</p>
+                                <p>Таким образом, для успешного снижения веса важно изменить отношение к себе самому и к пище, образ жизни и мышления, а также выбрать для себя правильный способ похудения.</p>
+
+                                <p>При <a href="/wiki/%D0%9D%D0%B5%D1%80%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B0%D0%BD%D0%BE%D1%80%D0%B5%D0%BA%D1%81%D0%B8%D1%8F" title="Нервная анорексия">нервной анорексии</a> похудение (снижение массы тела) становится основным движущим мотивом личности.</p>
+                                <h2><span class="editsection">[<a href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit&amp;section=4" title="Править секцию: Индекс массы тела">править</a>]</span> <span class="mw-headline" id=".D0.98.D0.BD.D0.B4.D0.B5.D0.BA.D1.81_.D0.BC.D0.B0.D1.81.D1.81.D1.8B_.D1.82.D0.B5.D0.BB.D0.B0">Индекс массы тела</span></h2>
+                                <dl>
+                                <dd>
+                                <div class="noprint"><i>Основная статья</i>: <i><b><a href="/wiki/%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81_%D0%BC%D0%B0%D1%81%D1%81%D1%8B_%D1%82%D0%B5%D0%BB%D0%B0" title="Индекс массы тела">Индекс массы тела</a></b></i></div>
+
+                                </dd>
+                                </dl>
+                                <p>Для выбора правильного способа похудения вначале необходимо определить <a href="/wiki/%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81_%D0%BC%D0%B0%D1%81%D1%81%D1%8B_%D1%82%D0%B5%D0%BB%D0%B0" title="Индекс массы тела">индекс массы тела</a> (ИМТ). Этот параметр является общепризнанным в мире ориентиром при борьбе с лишним весом, он позволяет быстро выбрать рациональную лечебную тактику.</p>
+                                <ul>
+                                <li>Если ваш индекс массы тела тела (ИМТ) менее 18, вам не нужно снижать свой вес. Наоборот, у вас имеется дефицит массы тела, и вам желательно поправиться.</li>
+                                <li>Если ваш индекс массы тела 18,5-24,99&#160;— это норма, заниматься похудением не следует.</li>
+                                <li>Если ваш ИМТ 25-29,99&#160;— у вас действительно имеется избыточная масса тела. Диета и физическая нагрузка при этом являются наиболее рациональными лечебными мероприятиями.</li>
+                                <li>Если ваш ИМТ 30-40&#160;— это уже настоящее ожирение, которое требует настоящих лечебных мероприятий, желательно под контролем врача. Как правило, кроме диеты и физической нагрузки врач рекомендует прием лекарственных препаратов, направленных на снижение веса (например <a href="/wiki/%D0%9F%D1%80%D0%B5%D0%BF%D0%B0%D1%80%D0%B0%D1%82%D1%8B_%D0%B4%D0%BB%D1%8F_%D0%BB%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BE%D0%B6%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F" title="Препараты для лечения ожирения">сибутрамин, ксеникал)</a>.</li>
+
+                                <li>Индекс массы тела выше 40 является признаком ожирения, угрожающего жизни пациента. При таком лишнем весе пациенту показано хирургическое лечение (например <a href="/wiki/%D0%91%D0%B0%D0%BD%D0%B4%D0%B0%D0%B6%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B6%D0%B5%D0%BB%D1%83%D0%B4%D0%BA%D0%B0" title="Бандажирование желудка">бандажирование желудка)</a>, которое дает стабильное снижение веса до нормы.</li>
+                                </ul>
+                                <h2><span class="editsection">[<a href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit&amp;section=5" title="Править секцию: Практические советы">править</a>]</span> <span class="mw-headline" id=".D0.9F.D1.80.D0.B0.D0.BA.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D1.81.D0.BE.D0.B2.D0.B5.D1.82.D1.8B">Практические советы</span></h2>
+                                <ul>
+                                <li>Пить воду (не менее 8 стаканов в день).</li>
+                                <li>Плотно завтракать.</li>
+                                <li>Стараться употреблять пищу часто, но малыми порциями (так называемое <a href="/w/index.php?title=%D0%94%D1%80%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5_%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5&amp;action=edit&amp;redlink=1" class="new" title="Дробное питание (страница отсутствует)">дробное питание</a>). Уделять большее время пережёвыванию пищи.</li>
+
+                                <li>Отвлекать себя разнообразными полезными занятиями (гулять, принимать ванну, вышивать и&#160;т.&#160;д.)</li>
+                                <li>Заниматься активными видами деятельности (ходить, плавать, бегать, прыгать на скакалке, кататься на велосипеде).</li>
+                                <li>Ограничить употребление кондитерских изделий, а так же всех изделий из муки и сахара.</li>
+                                <li>Избегать деловой одежды, стесняющей движения и приносящей психологический дискомфорт. Носить удобную и качественную обувь.</li>
+                                <li>Отказ от сладких напитков и ограничение количества соли.</li>
+                                <li>Служить вдохновляющим примером вашим растолстевшим родственникам: детям, мужу, родственникам, друзьям! Ожирение - болезнь зациклившихся на себе эгоистов, и кардинально вылечить его возможно только переключив вектор внимания от собственной персоны к миру других людей.</li>
+                                </ul>
+                                <h2><span class="editsection">[<a href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit&amp;section=6" title="Править секцию: Другое">править</a>]</span> <span class="mw-headline" id=".D0.94.D1.80.D1.83.D0.B3.D0.BE.D0.B5">Другое</span></h2>
+
+                                <p>В 1950-ых годах цирковой актрисе <a href="/wiki/%D0%93%D0%B5%D0%B9%D0%B5%D1%80,_%D0%A1%D0%B5%D0%BB%D0%B5%D1%81%D1%82%D0%B0" title="Гейер, Селеста">Селесте Гейер</a> за год удалось похудеть на 182 килограмма, с 251 до 69 кг, этот результат был внесён в <a href="/wiki/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0_%D1%80%D0%B5%D0%BA%D0%BE%D1%80%D0%B4%D0%BE%D0%B2_%D0%93%D0%B8%D0%BD%D0%BD%D0%B5%D1%81%D0%B0" title="Книга рекордов Гиннеса" class="mw-redirect">Книгу рекордов Гиннеса</a></p>
+                                <h2><span class="editsection">[<a href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit&amp;section=7" title="Править секцию: Литература">править</a>]</span> <span class="mw-headline" id=".D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D1.82.D1.83.D1.80.D0.B0">Литература</span></h2>
+                                <ol>
+                                <li>Obesity epidemic puts millions at risk from diseases [press release]. Geneva: World Health Organization; June 12, 1997; 46.</li>
+                                <li>Rössner S., «Obesity: the disease of the twenty-first century», Int. J. Obes. Relat. Metab. Disord., 2002 Dec; 26 Suppl. 4: S2-S4, <a href="http://www.ncbi.nlm.nih.gov/pubmed/12457290?dopt=Abstract" class="external mw-magiclink-pmid">PMID 12457290</a>.</li>
+
+                                <li><a href="http://www.who.int/nut/obs.htm" class="external text" rel="nofollow">Controlling the global obesity epidemic. World Health Organization. 2002.</a></li>
+                                <li><a href="http://www.iotf.org/" class="external text" rel="nofollow">International Obesity Task Force. Obesity in Europe. The case far action. 2002.</a></li>
+                                <li>Rankinen T, Perusse L, Weisnagel S et al. Obes Res 2002; 10: 196—243.</li>
+                                <li>Петеркова В. А., Ремизов О.&#160;В.&#160;Ожирение и метаболизм. 2004; 1: 17-23.</li>
+                                <li>Prentice AM, Jebb SA. Br Med J 1995; 311: 437-9.</li>
+                                <li>Трейси Манн. <a href="http://www.dieta.ru/nd/nov18/" class="external text" rel="nofollow">Поиск эффективного лечения ожирения: диеты не работают.</a></li>
+                                <li>Ольга Кравчук. <a href="http://www.eliel.ru/_2949.php" class="external text" rel="nofollow">27 советов советов по снижению веса.</a></li>
+
+                                </ol>
+                                <h2><span class="editsection">[<a href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit&amp;section=8" title="Править секцию: См. также">править</a>]</span> <span class="mw-headline" id=".D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5">См. также</span></h2>
+                                <ul>
+                                <li><a href="/wiki/%D0%9D%D0%B5%D1%80%D0%B2%D0%BD%D0%B0%D1%8F_%D0%B0%D0%BD%D0%BE%D1%80%D0%B5%D0%BA%D1%81%D0%B8%D1%8F" title="Нервная анорексия">Нервная анорексия</a></li>
+                                </ul>
+                                <p><br /></p>
+                                <table class="metadata plainlinks ambox ambox-content">
+                                <tr>
+                                <td class="ambox-image">
+                                <div>
+                                <div><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8" title="Ссылки на источники"><img alt="Question book-4.svg" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/48px-Question_book-4.svg.png" width="48" height="37" /></a></div>
+
+                                </div>
+                                </td>
+                                <td class="ambox-text"><b>В этой статье не хватает <a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8" title="Википедия:Ссылки на источники">ссылок на источники</a> информации.</b>
+                                <div class="ambox-text-small">Информация должна быть <a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8F%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C" title="Википедия:Проверяемость">проверяема</a>, иначе она может быть поставлена под сомнение и удалена.<br />
+                                Вы можете <a href="http://ru.wikipedia.org/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit" class="external text" rel="nofollow">отредактировать</a> эту статью, добавив ссылки на <a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%90%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D1%82%D0%B5%D1%82%D0%BD%D1%8B%D0%B5_%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8" title="Википедия:Авторитетные источники">авторитетные источники</a>.</div>
+
+                                </td>
+                                <td class="widthhack"></td>
+                                </tr>
+                                </table>
+
+
+                                <!--
+                                NewPP limit report
+                                Preprocessor node count: 404/1000000
+                                Post-expand include size: 6131/2048000 bytes
+                                Template argument size: 1747/2048000 bytes
+                                Expensive parser function count: 0/500
+                                -->
+
+                                <!-- Saved in parser cache with key ruwiki:pcache:idhash:264592-0!1!0!!ru!4 and timestamp 20101113220349 -->
+                                <div class="printfooter">
+                                Источник — «<a href="http://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">http://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5</a>»</div>
+                                				<!-- /bodytext -->
+                                								<!-- catlinks -->
+
+                                				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Categories" title="Служебная:Categories">Категории</a>: <span dir='ltr'><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%94%D0%B8%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F" title="Категория:Диетология">Диетология</a></span> | <span dir='ltr'><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9E%D0%B6%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B5" title="Категория:Ожирение">Ожирение</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Скрытые категории: <span dir='ltr'><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9D%D0%B5%D1%82_%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2_%D1%81_%D0%BC%D0%B0%D1%8F_2009" title="Категория:Википедия:Нет источников с мая 2009">Википедия:Нет источников с мая 2009</a></span> | <span dir='ltr'><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D0%B8_%D1%81_%D1%83%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8_%D0%B1%D0%B5%D0%B7_%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2_%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5_14_%D0%B4%D0%BD%D0%B5%D0%B9" title="Категория:Википедия:Статьи с утверждениями без источников более 14 дней">Википедия:Статьи с утверждениями без источников более 14 дней</a></span> | <span dir='ltr'><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9D%D0%B5%D1%82_%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2_%D1%81_%D1%8F%D0%BD%D0%B2%D0%B0%D1%80%D1%8F_2010" title="Категория:Википедия:Нет источников с января 2010">Википедия:Нет источников с января 2010</a></span> | <span dir='ltr'><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D0%B8_%D0%B1%D0%B5%D0%B7_%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA_%D0%BD%D0%B0_%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8" title="Категория:Википедия:Статьи без ссылок на источники">Википедия:Статьи без ссылок на источники</a></span></div></div>				<!-- /catlinks -->
+
+                                												<div class="visualClear"></div>
+                                			</div>
+                                			<!-- /bodyContent -->
+                                		</div>
+                                		<!-- /content -->
+                                		<!-- header -->
+                                		<div id="mw-head" class="noprint">
+
+                                <!-- 0 -->
+                                <div id="p-personal" class="">
+
+                                	<h5>Личные инструменты</h5>
+                                	<ul>
+                                					<li  id="pt-prefswitch-link-anon"><a href="http://ru.wikipedia.org/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:UsabilityInitiativePrefSwitch&amp;from=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" title="Узнайте о новых возможностях" class="no-text-transform">О новом интерфейсе</a></li>
+                                					<li  id="pt-login"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:UserLogin&amp;returnto=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o">Представиться / зарегистрироваться</a></li>
+                                			</ul>
+                                </div>
+
+                                <!-- /0 -->
+                                			<div id="left-navigation">
+
+
+                                <!-- 0 -->
+                                <div id="p-namespaces" class="vectorTabs">
+                                	<h5>Пространства имён</h5>
+                                	<ul>
+                                					<li  id="ca-nstab-main" class="selected"><a href="/wiki/%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5"  title="Содержание статьи [c]" accesskey="c"><span>Статья</span></a></li>
+                                					<li  id="ca-talk" class="new"><a href="/w/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit&amp;redlink=1"  title="Обсуждение содержания страницы [t]" accesskey="t"><span>Обсуждение</span></a></li>
+                                			</ul>
+                                </div>
+
+                                <!-- /0 -->
+
+                                <!-- 1 -->
+                                <div id="p-variants" class="vectorMenu emptyPortlet">
+                                		<h5><span>Варианты</span><a href="#"></a></h5>
+                                	<div class="menu">
+                                		<ul>
+                                					</ul>
+                                	</div>
+                                </div>
+
+                                <!-- /1 -->
+                                			</div>
+                                			<div id="right-navigation">
+
+                                <!-- 0 -->
+                                <div id="p-views" class="vectorTabs">
+                                	<h5>Просмотры</h5>
+                                	<ul>
+                                					<li id="ca-view" class="selected"><a href="/wiki/%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" ><span>Чтение</span></a></li>
+
+                                					<li id="ca-edit"><a href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=edit"  title="Эту статью можно изменять. Перед сохранением изменений, пожалуйста, нажмите кнопку предварительного просмотра для визуальной проверки результата [e]" accesskey="e"><span>Правка</span></a></li>
+                                					<li id="ca-history" class="collapsible "><a href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;action=history"  title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+                                			</ul>
+                                </div>
+
+                                <!-- /0 -->
+
+                                <!-- 1 -->
+                                <div id="p-cactions" class="vectorMenu emptyPortlet">
+                                	<h5><span>Действия</span><a href="#"></a></h5>
+
+                                	<div class="menu">
+                                		<ul>
+                                					</ul>
+                                	</div>
+                                </div>
+
+                                <!-- /1 -->
+
+                                <!-- 2 -->
+                                <div id="p-search">
+                                	<h5><label for="searchInput">Поиск</label></h5>
+
+                                	<form action="/w/index.php" id="searchform">
+                                		<input type='hidden' name="title" value="Служебная:Search"/>
+                                				<div id="simpleSearch">
+                                			<input id="searchInput" name="search" type="text"  title="Искать это слово [f]" accesskey="f"  value="" />
+                                			<button id="searchButton" type='submit' name='button'  title="Найти страницы, содержащие указанный текст"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-12" alt="Найти" /></button>
+                                		</div>
+                                			</form>
+                                </div>
+
+                                <!-- /2 -->
+
+                                			</div>
+                                		</div>
+                                		<!-- /header -->
+                                		<!-- panel -->
+                                			<div id="mw-panel" class="noprint">
+                                				<!-- logo -->
+                                					<div id="p-logo"><a style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/f/f6/Wikipedia-logo-v2-ru.png);" href="/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0"  title="Заглавная страница"></a></div>
+                                				<!-- /logo -->
+
+
+                                <!-- navigation -->
+                                <div class="portal" id='p-navigation'>
+                                	<h5>Навигация</h5>
+                                	<div class="body">
+                                				<ul>
+                                					<li id="n-mainpage"><a href="/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Перейти на заглавную страницу [z]" accesskey="z">Заглавная страница</a></li>
+                                					<li id="n-browse"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_%D0%BF%D0%BE_%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F%D0%BC" title="Поиск по категориям">Рубрикация</a></li>
+                                					<li id="n-index"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%90%D0%BB%D1%84%D0%B0%D0%B2%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8C" title="Поиск по двум первым буквам">Указатель А — Я</a></li>
+
+                                					<li id="n-featured"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%98%D0%B7%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8" title="Статьи, считающиеся лучшими статьями проекта">Избранные статьи</a></li>
+                                					<li id="n-randompage"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Random" title="Посмотреть случайную страницу [x]" accesskey="x">Случайная статья</a></li>
+                                					<li id="n-currentevents"><a href="/wiki/%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB:%D0%A2%D0%B5%D0%BA%D1%83%D1%89%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F" title="Статьи о текущих событиях в мире">Текущие события</a></li>
+                                				</ul>
+                                			</div>
+                                </div>
+
+                                <!-- /navigation -->
+
+                                <!-- SEARCH -->
+
+                                <!-- /SEARCH -->
+
+                                <!-- participation -->
+                                <div class="portal" id='p-participation'>
+                                	<h5>Участие</h5>
+                                	<div class="body">
+                                				<ul>
+                                					<li id="n-bug_in_article"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BE%D0%B1_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%D1%85" title="Сообщить об ошибке в этой статье">Сообщить об ошибке</a></li>
+                                					<li id="n-portal"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB_%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0" title="О проекте, о том, что вы можете сделать, где что находится">Портал сообщества</a></li>
+
+                                					<li id="n-forum"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A4%D0%BE%D1%80%D1%83%D0%BC" title="Форум участников Википедии">Форум</a></li>
+                                					<li id="n-recentchanges"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:RecentChanges" title="Список последних изменений [r]" accesskey="r">Свежие правки</a></li>
+                                					<li id="n-newpages"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:NewPages" title="Список недавно созданных страниц">Новые страницы</a></li>
+                                					<li id="n-help"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0" title="Справочник по проекту «Википедия»">Справка</a></li>
+                                					<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/%D0%A1%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C_%D0%BF%D0%BE%D0%B6%D0%B5%D1%80%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" title="Поддержите нас">Пожертвования</a></li>
+                                				</ul>
+
+                                			</div>
+                                </div>
+
+                                <!-- /participation -->
+
+                                <!-- coll-print_export -->
+                                <div class="portal" id='p-coll-print_export'>
+                                	<h5>Печать/экспорт</h5>
+                                	<div class="body">
+                                				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Book&amp;bookcmd=book_creator&amp;referer=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" title="Создать книгу или коллекцию статей" rel="nofollow">Создать книгу</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Book&amp;bookcmd=render_article&amp;arttitle=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;oldid=29359251&amp;writer=rl" title="Скачать PDF-версию этой вики-страницы" rel="nofollow">Скачать как PDF</a></li><li id="t-print"><a href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;printable=yes" title="Версия этой страницы для печати [p]" accesskey="p">Версия для печати</a></li></ul>			</div>
+
+                                </div>
+
+                                <!-- /coll-print_export -->
+
+                                <!-- TOOLBOX -->
+                                <div class="portal" id="p-tb">
+                                	<h5>Инструменты</h5>
+                                	<div class="body">
+                                		<ul>
+                                					<li id="t-whatlinkshere"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:WhatLinksHere/%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" title="Список всех страниц, которые ссылаются на эту страницу [j]" accesskey="j">Ссылки сюда</a></li>
+                                						<li id="t-recentchangeslinked"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:RecentChangesLinked/%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k">Связанные правки</a></li>
+
+                                																																										<li id="t-specialpages"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:SpecialPages" title="Список служебных страниц [q]" accesskey="q">Спецстраницы</a></li>
+                                											<li id="t-permalink"><a href="/w/index.php?title=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;oldid=29359251" title="Постоянная ссылка на эту версию страницы">Постоянная ссылка</a></li>
+                                				<li id="t-cite"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Cite&amp;page=%D0%9F%D0%BE%D1%85%D1%83%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5&amp;id=29359251" title="Информация о том, как цитировать эту страницу">Цитировать страницу</a></li>		</ul>
+                                	</div>
+                                </div>
+
+                                <!-- /TOOLBOX -->
+
+                                <!-- LANGUAGES -->
+
+                                <div class="portal" id="p-lang">
+                                	<h5>На других языках</h5>
+                                	<div class="body">
+                                		<ul>
+                                					<li class="interwiki-ca"><a href="http://ca.wikipedia.org/wiki/P%C3%A8rdua_de_pes" title="Pèrdua de pes">Català</a></li>
+                                					<li class="interwiki-de"><a href="http://de.wikipedia.org/wiki/Di%C3%A4t" title="Diät">Deutsch</a></li>
+                                					<li class="interwiki-en"><a href="http://en.wikipedia.org/wiki/Weight_loss" title="Weight loss">English</a></li>
+
+                                					<li class="interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Amaigrissement" title="Amaigrissement">Français</a></li>
+                                					<li class="interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Vermagering" title="Vermagering">Nederlands</a></li>
+                                					<li class="interwiki-ja"><a href="http://ja.wikipedia.org/wiki/%E7%97%A9%E8%BA%AB" title="痩身">日本語</a></li>
+                                					<li class="interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Perda_de_peso" title="Perda de peso">Português</a></li>
+                                					<li class="interwiki-sl"><a href="http://sl.wikipedia.org/wiki/Huj%C5%A1anje" title="Hujšanje">Slovenščina</a></li>
+                                					<li class="interwiki-fi"><a href="http://fi.wikipedia.org/wiki/Laihduttaminen" title="Laihduttaminen">Suomi</a></li>
+
+                                					<li class="interwiki-zh"><a href="http://zh.wikipedia.org/wiki/%E5%87%8F%E8%82%A5" title="减肥">中文</a></li>
+                                				</ul>
+                                	</div>
+                                </div>
+
+                                <!-- /LANGUAGES -->
+                                			</div>
+                                		<!-- /panel -->
+                                		<!-- footer -->
+                                		<div id="footer">
+
+                                											<ul id="footer-info">
+                                																	<li id="footer-info-lastmod"> Последнее изменение этой страницы: 22:03, 13 ноября 2010.</li>
+                                																							<li id="footer-info-copyright">Текст доступен по <a rel="license" href="http://ru.wikipedia.org/wiki/Википедия:Текст_лицензии_Creative_Commons_Attribution-ShareAlike_3.0_Unported">лицензии Creative Commons Attribution-ShareAlike</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+                                в отдельных случаях могут действовать дополнительные условия.
+                                Подробнее см. <a href="http://wikimediafoundation.org/wiki/Terms_of_Use/ru">Условия использования</a>.<br/>
+                                Wikipedia&reg; - зарегистрированная торговая марка <a href="http://wikimediafoundation.org/wiki/Приёмная">Wikimedia Foundation, Inc.</a>, некоммерческой организации.<br /></li><li class="noprint"><a class='internal' href="http://ru.wikipedia.org/wiki/Википедия:Контакты">Свяжитесь с нами</a></li>
+
+                                															</ul>
+                                															<ul id="footer-places">
+                                																	<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="wikimedia:Политика конфиденциальности">Политика конфиденциальности</a></li>
+                                																							<li id="footer-places-about"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5" title="Википедия:Описание">Описание Википедии</a></li>
+                                																							<li id="footer-places-disclaimer"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Википедия:Отказ от ответственности">Отказ от ответственности</a></li>
+                                															</ul>
+                                										<ul id="footer-icons" class="noprint">
+
+                                								<li id="footer-icon-poweredby"><a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/skins-1.5/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></li>
+                                												<li id="footer-icon-copyright"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a></li>
+                                							</ul>
+                                			<div style="clear:both"></div>
+                                		</div>
+                                		<!-- /footer -->
+                                		<!-- fixalpha -->
+                                		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+
+                                		<!-- /fixalpha -->
+
+                                <script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+                                <script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv237 in 0.065 secs. -->			</body>
+                                </html>

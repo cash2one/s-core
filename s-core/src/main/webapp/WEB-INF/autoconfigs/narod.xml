@@ -1,0 +1,109 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../config.xml.xsd">
+    <variables>
+        <var type="text" name="login" min="8" max="14"/>
+        <var type="text" name="password" min="6" max="8"/>
+        <var type="text" name="iname" min="6" max="10"/>
+        <var type="text" name="fname" min="6" max="8"/>
+        <var type="text" name="answer" min="6" max="10"/>
+        <var type="number" name="hintq" min="1" max="4"/>
+        <var type="phone" name="phonenumber"/>
+        <var type="constant" name="yandexpop" value="pop.yandex.ru"/>
+        <var type="constant" name="ftphost" value="ftp.narod.ru"/>
+        <var type="constant" name="narod" value="narod"/>
+    </variables>
+    <commands>
+        <command type="loaduseragent"/>
+        <command type="loadproxy"/>
+        <command type="request" method="get" url="http://passport.yandex.ru/passport?mode=register&amp;msg=mail">
+            <extract>
+                <var type="attvalue" name="idkey" attribute="name" value="idkey" field="value"/>
+                <var type="attvalue" name="steponeurl" attribute="name" value="bigForm" field="action"/>
+            </extract>
+        </command>
+
+        <command type="request" method="post" varurl="steponeurl">
+            <referer value="http://passport.yandex.ru/passport?mode=register&amp;msg=mail&amp;retpath=http%3A%2F%2Fnarod.yandex.ru%2F"/>
+            <post-parameters>
+                <parameter type="var" name="idkey" var="idkey"/>
+                <parameter type="constant" name="step" value="one"/>
+                <parameter type="constant" name="fresh" value="2"/>
+                <parameter type="constant" name="filled" value="yes"/>
+                <parameter type="var" name="iname" var="iname"/>
+                <parameter type="var" name="fname" var="fname"/>
+                <parameter type="var" name="login" var="login"/>
+                <parameter type="constant" name="done" value="Дальше ?"/>
+            </post-parameters>
+            <extract>
+                <var type="attvalue" name="idkey" attribute="name" value="idkey" field="value"/>
+                <var type="attvalue" name="imageurl" attribute="class" value="captcha-img" field="src"/>
+                <var type="attvalue" name="steptwourl" attribute="name" value="bigForm" field="action"/>
+            </extract>
+        </command>
+        <command type="saveimage" url="imageurl" name="imagedata"/>
+        <command type="anticaptcha">
+            <retrieve var="captcha_response" image="imagedata" ext="gif" phrase="false"/>
+        </command>
+        <command type="request" method="post" varurl="steptwourl">
+            <referer var="steponeurl"/>
+            <post-parameters>
+                <parameter type="var" name="idkey" var="idkey"/>
+                <parameter type="constant" name="step" value="two"/>
+                <parameter type="constant" name="filled" value="yes"/>
+                <parameter type="var" name="login" var="login"/>
+                <parameter type="var" name="fname" var="fname"/>
+                <parameter type="var" name="iname" var="iname"/>
+                <parameter type="time" name="time"/>
+                <parameter type="constant" name="gmt_offset" value="180"/>
+                <parameter type="var" name="passwd" var="password"/>
+                <parameter type="var" name="passwd2" var="password"/>
+                <parameter type="var" name="hintq" var="hintq"/>
+                <parameter type="constant" name="udhintq" value=""/>
+                <parameter type="var" name="hinta" var="answer"/>
+                <parameter type="var" name="hintasave" var="answer"/>
+                <parameter type="constant" name="questnum" value=""/>
+                <parameter type="constant" name="hintqsave" value=""/>
+                <parameter type="constant" name="email" value=""/>
+                <parameter type="var" name="phonenumber" var="phonenumber"/>
+                <parameter type="var" name="code" var="captcha_response"/>
+                <parameter type="constant" name="agreed" value="yes"/>
+                <parameter type="constant" name="newform" value="Зарегистрировать"/>
+            </post-parameters>
+            <test>
+                <var type="element" attribute="class" value="b-error" expected="false" message="account registered successfully"/>
+            </test>
+        </command>
+        <command type="request" method="post" url="http://passport.yandex.ru/passport?mode=auth">
+            <referer value="http://narod.yandex.ru"/>
+            <post-parameters>
+                <parameter type="var" name="login" var="login"/>
+                <parameter type="var" name="passwd" var="password"/>
+                <parameter type="constant" name="retpath" value="http://narod.yandex.ru"/>
+                <parameter type="time" name="timestamp"/>
+            </post-parameters>
+        </command>
+        <command type="request" method="get" url="http://mail.yandex.ru/">
+            <test>
+                <var type="email" login="login" password="password" host="yandexpop"/>
+            </test>
+        </command>
+        <command type="saveemail">
+            <emailaccount email="login" emailpattern="###@yandex.ru" host="yandexpop" user="login" password="password" type="narod"/>
+        </command>
+        <command type="request" method="get" url="http://narod.yandex.ru/">
+            <extract>
+                <var type="attvalue" name="diskurl" attribute="class" value="button b-button-create" field="href">
+                    <prefix value="http://narod.yandex.ru"/>
+                </var>
+            </extract>
+        </command>
+        <command type="request" method="get" varurl="diskurl">
+            <referer value="http://narod.yandex.ru/"/>
+            <test>
+                <var type="ftp" login="login" password="password" host="ftphost" message="ftp activated successfully"/>
+            </test>
+        </command>
+        <command type="saveftp">
+            <ftpaccount url="login" urlpattern="http://###.narod.ru" login="login" password="password" host="ftphost" prefix="" type="narod"/>
+        </command>
+    </commands>
+</project>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macros-rules>
+    <macros-rule pattern="\[TITLE\]">
+        \${page.title}
+    </macros-rule>
+    <macros-rule pattern="\[FILENAME\]">
+        \${page.filename}
+    </macros-rule>
+    <macros-rule pattern="\[RANDKEY\]">
+        \${pageService.randomKeyword(page)}
+    </macros-rule>
+    <macros-rule pattern="\[RANDTEXT-(\d+)-(\d+)\]">
+        <![CDATA[<#list context.textGenerator.generatePhrase($1, $2) as sentence>\${sentence.content}&nbsp;</#list>]]>
+    </macros-rule>
+    <macros-rule pattern="\[CATEGORIES\]">
+        <![CDATA[
+        <ul>
+            <#list pageService.getCategoryPages(context) as page>
+                <li><a href="\${page.filename}">\${page.title}</a></li>
+            </#list>
+        </ul>
+        ]]>
+    </macros-rule>
+    <macros-rule pattern="(?s)\[ITERATE-(\d+)\](.*?)\[/ITERATE\]">
+        <![CDATA[
+                <#list 1..$1 as idx>
+                $2
+                </#list>
+        ]]>
+    </macros-rule>
+    <macros-rule pattern="(?s)\[RANDPAGE\](.*?)\[/RANDPAGE\]">
+        <![CDATA[
+                <#assign currentPage = pageService.getRandomContentPage(context)>
+                $1
+        ]]>
+    </macros-rule>
+    <macros-rule pattern="(?s)\[LINKEDPAGES\](.*?)\[/LINKEDPAGES\]">
+        <![CDATA[
+                <#list page.linkedPages as currentPage>
+                $1
+                </#list>
+        ]]>
+    </macros-rule>
+    <macros-rule pattern="\[CURRENTPAGETITLE\]">
+        \${currentPage.title}
+    </macros-rule>
+    <macros-rule pattern="\[CURRENTPAGERANDKEY\]">
+        <![CDATA[
+            \${pageService.randomKeyword(currentPage)}
+        ]]>
+    </macros-rule>
+    <macros-rule pattern="\[CURRENTPAGEFILENAME\]">
+        \${currentPage.filename}
+    </macros-rule>
+    <macros-rule pattern="\[CURRENTPAGERANDCONTENT\]">
+        \${contentService.getRandomContent(currentPage)}
+    </macros-rule>
+    <macros-rule pattern="\[CONTENTS\]">
+        <![CDATA[
+            <#list page.contents as content>
+                <p>\${content}</p>
+            </#list>
+        ]]>
+    </macros-rule>
+    <macros-rule pattern="\[SITE\]">
+        \${context.url}
+    </macros-rule>
+    <macros-rule pattern="\[CHARSET\]">
+        \${charset}
+    </macros-rule>
+    <macros-rule pattern="\[DATE-(\d+)-(\d+)-(\d+)\]">
+        \${dateService.generateDate($1, $2, $3)}
+    </macros-rule>
+</macros-rules>

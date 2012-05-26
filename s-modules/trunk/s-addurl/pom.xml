@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.seo</groupId>
+    <artifactId>s-addurl</artifactId>
+    <version>0.1-SNAPSHOT</version>
+
+    <scm>
+        <connection>
+            scm:svn:https://dev/svn/s-modules/s-addurl/trunk
+        </connection>
+        <developerConnection>
+            scm:svn:https://dev/svn/s-modules/s-addurl/trunk
+        </developerConnection>
+        <url>https://dev/svn/s-modules/s-addurl/trunk</url>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.seo</groupId>
+            <artifactId>s-addurl-interface</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.seo</groupId>
+            <artifactId>s-proxy-interface</artifactId>
+            <version>0.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.seo</groupId>
+            <artifactId>s-useragent-interface</artifactId>
+            <version>0.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.htmlcleaner</groupId>
+            <artifactId>htmlcleaner</artifactId>
+            <version>2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.seo</groupId>
+            <artifactId>s-captcha-interface</artifactId>
+            <version>0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.seo</groupId>
+            <artifactId>s-webclient-interface</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.seo</groupId>
+            <artifactId>s-webclient</artifactId>
+            <version>0.2-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <tagBase>svn://localhost/s-modules/s-addurl/tags/</tagBase>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>    
+</project>

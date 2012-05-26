@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+       default-autowire="byName">
+
+    <!--<bean id="sessionData" class="com.seo.core.session.SessionDataImpl" scope="session">-->
+        <!--<aop:scoped-proxy proxy-target-class="true"/>-->
+    <!--</bean>-->
+
+    <bean id="tilesConfigurer"
+          class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/tiles-config.xml</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
+
+    </bean>
+    
+    <bean id="mainPageAction" class="com.seo.core.web.struts.MainPageAction"/>
+
+    <!--begin doorway configuration crud actions-->
+    <bean id="listDoorwayConfigurationAction" class="com.seo.core.web.struts.crud.configuration.ListDoorwayConfigurationAction" scope="request"/>
+    <bean id="createDoorwayConfigurationAction" class="com.seo.core.web.struts.crud.configuration.CreateDoorwayConfigurationAction" scope="request"/>
+    <bean id="saveDoorwayConfigurationAction" class="com.seo.core.web.struts.crud.configuration.SaveDoorwayConfigurationAction" scope="request"/>
+    <bean id="editDoorwayConfigurationAction" class="com.seo.core.web.struts.crud.configuration.EditDoorwayConfigurationAction" scope="request"/>
+    <bean id="deleteDoorwayConfigurationAction" class="com.seo.core.web.struts.crud.configuration.DeleteDoorwayConfigurationAction" scope="request"/>
+    <!--end doorway configuration crud actions-->
+
+    <!--begin template crud actions-->
+    <bean id="listTemplateAction" class="com.seo.core.web.struts.crud.template.ListTemplateAction" scope="request"/>
+    <bean id="createTemplateAction" class="com.seo.core.web.struts.crud.template.CreateTemplateAction" scope="request"/>
+    <bean id="saveTemplateAction" class="com.seo.core.web.struts.crud.template.SaveTemplateAction" scope="request"/>
+    <bean id="deleteTemplateAction" class="com.seo.core.web.struts.crud.template.DeleteTemplateAction" scope="request"/>
+    <!--end template crud actions-->
+
+    <!--begin keyword group crud actions-->
+    <bean id="listKeywordGroupAction" class="com.seo.core.web.struts.crud.keyword.ListKeywordGroupAction" scope="request"/>
+    <bean id="createKeywordGroupAction" class="com.seo.core.web.struts.crud.keyword.CreateKeywordGroupAction" scope="request"/>
+    <bean id="saveKeywordGroupAction" class="com.seo.core.web.struts.crud.keyword.SaveKeywordGroupAction" scope="request"/>
+    <bean id="deleteKeywordGroupAction" class="com.seo.core.web.struts.crud.keyword.DeleteKeywordGroupAction" scope="request"/>
+    <!--end keyword group crud actions-->
+
+    <!--begin text source crud actions-->
+    <bean id="listTextSourceAction" class="com.seo.core.web.struts.crud.text.ListTextSourceAction" scope="request"/>
+    <bean id="createTextSourceAction" class="com.seo.core.web.struts.crud.text.CreateTextSourceAction" scope="request"/>
+    <bean id="saveTextSourceAction" class="com.seo.core.web.struts.crud.text.SaveTextSourceAction" scope="request"/>
+    <bean id="deleteTextSourceAction" class="com.seo.core.web.struts.crud.text.DeleteTextSourceAction" scope="request"/>
+    <!--end text source crud actions-->
+
+    <!--begin doorway crud actions-->
+    <bean id="listDoorwayAction" class="com.seo.core.web.struts.crud.doorway.ListDoorwayAction" scope="request"/>
+    <!--end doorway crud actions-->
+
+    <!--begin autoconfig crud actions-->
+    <bean id="listAutoConfigAction" class="com.seo.core.web.struts.crud.autoconfig.ListAutoConfigAction" scope="request"/>
+    <bean id="deleteAutoConfigAction" class="com.seo.core.web.struts.crud.autoconfig.DeleteAutoConfigAction" scope="request"/>
+    <bean id="saveAutoConfigAction" class="com.seo.core.web.struts.crud.autoconfig.SaveAutoConfigAction" scope="request"/>
+    <bean id="createAutoConfigAction" class="com.seo.core.web.struts.crud.autoconfig.CreateAutoConfigAction" scope="request"/>
+    <!--end autoconfig crud actions-->
+
+    <!--start redirect script-->
+    <bean id="listRedirectScriptAction" class="com.seo.core.web.struts.crud.redirect.ListRedirectScriptAction" scope="request"/>
+    <bean id="loadRedirectScriptAction" class="com.seo.core.web.struts.crud.redirect.LoadRedirectScriptAction" scope="request"/>
+    <bean id="saveRedirectScriptAction" class="com.seo.core.web.struts.crud.redirect.SaveRedirectScriptAction" scope="request"/>
+    <bean id="deleteRedirectScriptAction" class="com.seo.core.web.struts.crud.redirect.DeleteRedirectScriptAction" scope="request"/>
+    <bean id="createRedirectScriptAction" class="com.seo.core.web.struts.crud.redirect.CreateRedirectScriptAction" scope="request"/>
+    <!--end redirect script-->
+
+
+    <bean id="openCreateDoorwayPageAction" class="com.seo.core.web.struts.doorgen.OpenCreateDoorwayPageAction" scope="request"/>
+    <bean id="createDoorwayAction" class="com.seo.core.web.struts.doorgen.CreateDoorwayAction" scope="request"/>
+    <bean id="runAutoConfigAction" class="com.seo.core.web.struts.RunAutoConfigAction" scope="request"/>
+    <bean id="viewTaskStatusAction" class="com.seo.core.web.struts.ViewTaskStatusAction" scope="request"/>
+    <bean id="viewTaskMessagesAction" class="com.seo.core.web.struts.ViewTaskMessagesAction" scope="request"/>
+    <bean id="processDoorwayCommandAction" class="com.seo.core.web.struts.ProcessDoorwayCommandAction" scope="request"/>
+    <bean id="interruptTaskAction" class="com.seo.core.web.struts.InterruptTaskAction" scope="request"/>
+    <bean id="clearTasksAction" class="com.seo.core.web.struts.ClearTasksAction" scope="request"/>
+    <bean id="viewCachedProxiesAction" class="com.seo.core.web.struts.ViewCachedProxies" scope="prototype"/>
+    <bean id="clearProxyCacheAction" class="com.seo.core.web.struts.ClearProxyCache" scope="prototype"/>
+</beans>

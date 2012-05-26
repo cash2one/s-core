@@ -1,0 +1,111 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="1config.xml.xsd">
+    <variables>
+        <var type="text" name="login" min="8" max="14"/>
+        <var type="text" name="password" min="6" max="8"/>
+        <var type="extern" name="email"/>
+        <var type="extern" name="emaillogin"/>
+        <var type="extern" name="emailpassword"/>
+        <var type="extern" name="emailhost"/>
+    </variables>
+    <commands>
+        <command type="loaduseragent"/>
+
+        <command type="loadproxy"/>
+
+        <command type="loademail" prefix="email" host="mail.clovermail.net"/>
+        
+        <command type="request" method="get" url="http://byethost.com/signup.php">
+            <extract>
+                <var type="xpath" name="firstid" xpath="//tr/td/img" field="src"/>
+                <var type="regexp" name="id1" pattern="image\.php\?id=(.+)&quot;"/>
+            </extract>
+        </command>
+
+        <command type="saveimage" url="firstid" name="firstimage"/>
+
+        <command type="anticaptcha">
+            <retrieve var="first_captcha" image="firstimage" ext="png" phrase="false"/>
+        </command>
+
+        <command type="request " method="post" url="http://securesignup.net/register.php">
+            <referer value="http://byethost.com/signup.php"/>
+            <post-parameters>
+                <parameter type="var" name="email" var="email"/>
+                <parameter type="var" name="password" var="password"/>
+                <parameter type="constant" name="submit" value="Register"/>
+                <parameter type="var" name="username" var="login"/>
+                <parameter type="var" name="id" var="firstid"/>
+                <parameter type="var" name="number" var="first_captcha"/>
+                <parameter type="constant" name="website_category" value="Personal"/>
+                <parameter type="constant" name="website_language" value="Non-English"/>
+                <parameter type="constant" name="referer" value="http://byethost.com/signup.php"/>
+            </post-parameters>
+        </command>
+
+        <command type="request" method="post" url="http://securesignup.net/register_2.php">
+            <referer value="http://byethost.com/signup.php"/>
+            <post-parameters>
+                <parameter type="var" name="email" var="email"/>
+                <parameter type="var" name="password" var="password"/>
+                <parameter type="constant" name="submit" value="Register"/>
+                <parameter type="var" name="username" var="login"/>
+                <parameter type="var" name="id" var="id1"/>
+                <parameter type="var" name="number" var="first_captcha"/>
+                <parameter type="constant" name="website_category" value="Personal"/>
+                <parameter type="constant" name="website_language" value="Non-English"/>
+                <parameter type="constant" name="referer" value="http://byethost.com/signup.php"/>                
+            </post-parameters>
+            <extract>
+                <var type="regexp" name="recaptcha_url1" pattern="&quot;(http://api.recaptcha.net/challenge.+)&quot;"/>
+            </extract>
+        </command>
+
+        <command type="recaptcha" name="recaptcha_challenge1" url="recaptcha_url1" imagevar="recaptcha_response1"/>
+
+        <command type="request" method="post" url="http://securesignup.net/register_catchpa_2.php">
+            <referer value="http://securesignup.net/register_2.php"/>
+            <post-parameters>
+                <parameter type="var" name="recaptcha_challenge_field" var="recaptcha_challenge1"/>
+                <parameter type="var" name="recaptcha_response_field" var="recaptcha_response1"/>
+                <parameter type="constant" name="submit" value="Register"/>
+            </post-parameters>
+        </command>
+
+        <command type="email" sleep="15000" attempts="5">
+            <credential login="emaillogin" password="emailpassword" host="emailhost"/>
+            <extract>
+                <var type="regexp" name="activate_url" pattern="(http://securesignup\.net/activate\.php.+)$"/>
+            </extract>
+        </command>
+
+        <command type="request" method="get" varurl="activate_url">
+            <extract>
+                <var type="regexp" name="recaptcha_url2" pattern="&quot;(http://api.recaptcha.net/challenge.+)&quot;"/>
+            </extract>
+        </command>
+        
+        <command type="recaptcha" name="recaptcha_challenge2" url="recaptcha_url2" imagevar="recaptcha_response2"/>
+
+        <command type="request" method="post" url="http://securesignup.net/activate_2.php">
+            <referer value="http://securesignup.net/activate_2.php"/>
+            <post-parameters>
+                <parameter type="var" name="recaptcha_challenge_field" var="recaptcha_challenge2"/>
+                <parameter type="var" name="recaptcha_response_field" var="recaptcha_response2"/>
+                <parameter type="constant" name="submit" value="Register"/>
+            </post-parameters>
+        </command>
+
+        <command type="email" sleep="15000" attempts="5">
+            <credential login="emaillogin" password="emailpassword" host="emailhost"/>
+            <extract>
+                <var type="regexp" name="hosturl" pattern="Your URL:               (.+) or"/>
+                <var type="regexp" name="ftpserver" pattern="FTP Server :            (.+)"/>
+                <var type="regexp" name="ftplogin" pattern="FTP Login :             (.+)"/>
+                <var type="regexp" name="ftppassword" pattern="FTP Password :          (.+)"/>
+            </extract>
+        </command>
+
+        <command type="deleteemail" ref="email"/>
+
+    </commands>
+</project>
