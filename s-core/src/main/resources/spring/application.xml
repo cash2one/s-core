@@ -20,7 +20,6 @@
         <property name="ignoreResourceNotFound" value="true"/>
         <property name="locations">
             <list>
-                <jee:jndi-lookup jndi-name="java:comp/env/configLocation"/>
                 <value>classpath:/properties/*.properties</value>
             </list>
         </property>
