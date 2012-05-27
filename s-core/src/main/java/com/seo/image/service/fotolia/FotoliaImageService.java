@@ -45,23 +45,17 @@ public class FotoliaImageService implements ImageService{
         Request request = new Request(URL + String.valueOf(id), RequestFactory.GET_METHOD, null, null);
         Response response = client.retrievePage(request);
 
-        try {
-            TagNode node = CLEANER.clean(response.getContent());
-            TagNode div = node.findElementByAttValue("class", "deco", true, true);
+        TagNode node = CLEANER.clean(response.getContent());
+        TagNode div = node.findElementByAttValue("class", "deco", true, true);
 
-            if (div != null) {
-                TagNode image = div.findElementByName("img", true);
-                if(LOGGER.isDebugEnabled()) {
-                    LOGGER.debug("found image: " + image.getAttributeByName("src"));
-                }
-                return image.getAttributeByName("src");
+        if (div != null) {
+            TagNode image = div.findElementByName("img", true);
+            if(LOGGER.isDebugEnabled()) {
+                LOGGER.debug("found image: " + image.getAttributeByName("src"));
             }
-        } catch (IOException e) {
-            LOGGER.error("I/O Error: " + e);
-
-            throw new RuntimeException("I/O Error: " + e);
-
+            return image.getAttributeByName("src");
         }
+
         return null;
     }
 

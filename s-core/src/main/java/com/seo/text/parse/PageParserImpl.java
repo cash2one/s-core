@@ -27,62 +27,55 @@ public class PageParserImpl implements PageParser {
         LOGGER.debug("starting page parsing");
 
         StringBuffer text = new StringBuffer();
-        try {
-            TagNode root = CLEANER.clean(page);
+        TagNode root = CLEANER.clean(page);
 
-            List<String> texts = new ArrayList<String>();
-            for (TagNode tagNode : root.getAllElements(true)) {
-                if (isContentNode(tagNode.getName()) && tagNode.getChildren() != null && tagNode.getText() != null) {
-                    StringBuffer buffer = tagNode.getText();
+        List<String> texts = new ArrayList<String>();
+        for (TagNode tagNode : root.getAllElements(true)) {
+            if (isContentNode(tagNode.getName()) && tagNode.getChildren() != null && tagNode.getText() != null) {
+                StringBuffer buffer = tagNode.getText();
 
-                    String replacedHtml = buffer.toString().replaceAll("\\<[^>]*>", "");
-                    replacedHtml = replacedHtml.replaceAll("\\n", "");
-                    replacedHtml = replacedHtml.replaceAll(" +", " ");
-                    replacedHtml = StringEscapeUtils.unescapeHtml(replacedHtml);
+                String replacedHtml = buffer.toString().replaceAll("\\<[^>]*>", "");
+                replacedHtml = replacedHtml.replaceAll("\\n", "");
+                replacedHtml = replacedHtml.replaceAll(" +", " ");
+                replacedHtml = StringEscapeUtils.unescapeHtml(replacedHtml);
 
-                    String jsPattern = "[^{}\\[\\]=]+";
-                    if (replacedHtml.length() >= MINIMAL_CONTENT_LENGTH && replacedHtml.matches(jsPattern)) {
-                        texts.add(replacedHtml);
-                    }
+                String jsPattern = "[^{}\\[\\]=]+";
+                if (replacedHtml.length() >= MINIMAL_CONTENT_LENGTH && replacedHtml.matches(jsPattern)) {
+                    texts.add(replacedHtml);
                 }
             }
-
-            List<String> notUniqueTexts = new ArrayList<String>();
-            for (String s : texts) {
-                List<String> textsWithoutString = new ArrayList<String>(texts);
-                textsWithoutString.remove(s);
-
-                for (String s1 : textsWithoutString) {
-                    if (s1.contains(s)) {
-                        notUniqueTexts.add(s1);
-                    }
-                }
-            }
-
-            texts.removeAll(notUniqueTexts);
-            for (String string : texts) {
-                text.append(string).append("\n");
-            }
-
-            String textString = text.toString();
-            String[] strings = textString.split("[\n\r]+");
-
-            StringBuffer resultText = new StringBuffer();
-            for (String string : strings) {
-                if (MINIMAL_STRING_LENGTH <= string.length()) {
-                    resultText.append(string).append("\n");
-                }
-            }
-
-            return new ParsePageResponse(
-                    resultText.toString()
-            );
-
-        } catch (IOException e) {
-            LOGGER.error("i/o exception: {} {}", e.getMessage(), e.getStackTrace());
-
-            throw new RuntimeException("i/o exception: " + e.getMessage());
         }
+
+        List<String> notUniqueTexts = new ArrayList<String>();
+        for (String s : texts) {
+            List<String> textsWithoutString = new ArrayList<String>(texts);
+            textsWithoutString.remove(s);
+
+            for (String s1 : textsWithoutString) {
+                if (s1.contains(s)) {
+                    notUniqueTexts.add(s1);
+                }
+            }
+        }
+
+        texts.removeAll(notUniqueTexts);
+        for (String string : texts) {
+            text.append(string).append("\n");
+        }
+
+        String textString = text.toString();
+        String[] strings = textString.split("[\n\r]+");
+
+        StringBuffer resultText = new StringBuffer();
+        for (String string : strings) {
+            if (MINIMAL_STRING_LENGTH <= string.length()) {
+                resultText.append(string).append("\n");
+            }
+        }
+
+        return new ParsePageResponse(
+                resultText.toString()
+        );
 
     }
 

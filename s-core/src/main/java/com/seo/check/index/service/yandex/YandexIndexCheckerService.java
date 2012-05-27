@@ -59,14 +59,7 @@ public class YandexIndexCheckerService implements IndexCheckerService {
     }
 
     private Integer parseResponse(Response response) {
-        TagNode node = null;
-        try {
-            node = CLEANER.clean(response.getContent());
-        } catch (IOException e) {
-            LOGGER.error("I/O error: {}", e.getMessage());
-
-            throw new RuntimeException("I/O error: " + e.getMessage());
-        }
+        TagNode node = CLEANER.clean(response.getContent());
 
         TagNode text = node.findElementByAttValue("class", "b-head-logo__text", true, false);
 
