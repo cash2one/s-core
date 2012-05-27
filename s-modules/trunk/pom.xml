@@ -21,7 +21,6 @@
         <module>s-checker</module>
         <module>s-compress</module>
         <module>s-doorgen</module>
-        <module>s-email-interface</module>
         <module>s-email</module>
         <module>s-hosting</module>
         <module>s-image-interface</module>
