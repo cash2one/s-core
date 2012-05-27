@@ -76,7 +76,7 @@
         </dependency>
         <dependency>
             <groupId>com.seo</groupId>
-            <artifactId>s-provider-interface</artifactId>
+            <artifactId>s-provider</artifactId>
             <version>0.2-SNAPSHOT</version>
         </dependency>
         <dependency>
