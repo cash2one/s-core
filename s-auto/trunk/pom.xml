@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.seo</groupId>
-    <artifactId>s-auto</artifactId>
+    <artifactId>s-core</artifactId>
 
-    <name>seo-auto</name>
+    <name>seo-core api module</name>
 
     <version>0.1</version>
 

@@ -12,10 +12,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.seo</groupId>
-    <artifactId>seo-core</artifactId>
+    <artifactId>seo-core-client</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>seo-core</name>
+    <name>seo-core client module</name>
 
     <properties>
         <log4j.properties.filename>log4j.dev.properties</log4j.properties.filename>
@@ -87,53 +87,8 @@
     <dependencies>
         <dependency>
             <groupId>com.seo</groupId>
-            <artifactId>s-blogposter</artifactId>
-            <version>0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-indexchecker</artifactId>
-            <version>0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-antigate</artifactId>
-            <version>0.2-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-upload</artifactId>
-            <version>0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-compress</artifactId>
-            <version>0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-provider</artifactId>
-            <version>0.2-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-useragent</artifactId>
-            <version>0.2-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-insorg</artifactId>
-            <version>0.2-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-checker</artifactId>
-            <version>0.2-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-text</artifactId>
-            <version>0.2-SNAPSHOT</version>
+            <artifactId>s-core</artifactId>
+            <version>0.1</version>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
@@ -269,11 +224,6 @@
             <artifactId>c3p0</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-auto</artifactId>
-            <version>0.1</version>
-        </dependency>
-        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <scope>test</scope>
@@ -311,16 +261,6 @@
         <dependency>
             <groupId>net.sf.opencsv</groupId>
             <artifactId>opencsv</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-messages</artifactId>
-            <version>0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-doorgen</artifactId>
-            <version>0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
