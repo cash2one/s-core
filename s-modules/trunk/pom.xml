@@ -24,7 +24,6 @@
         <module>s-email</module>
         <module>s-hosting</module>
         <module>s-image</module>
-        <module>s-indexchecker-interface</module>
         <module>s-indexchecker</module>
         <module>s-messages</module>
         <module>s-provider-interface</module>

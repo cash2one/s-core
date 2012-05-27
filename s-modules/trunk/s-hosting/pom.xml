@@ -21,7 +21,7 @@
         </dependency>
         <dependency>
             <groupId>com.seo</groupId>
-            <artifactId>s-indexchecker-interface</artifactId>
+            <artifactId>s-indexchecker</artifactId>
             <version>0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

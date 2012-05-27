@@ -81,7 +81,7 @@
         </dependency>
         <dependency>
             <groupId>com.seo</groupId>
-            <artifactId>s-email-interface</artifactId>
+            <artifactId>s-email</artifactId>
             <version>0.2-SNAPSHOT</version>
         </dependency>
         <dependency>
