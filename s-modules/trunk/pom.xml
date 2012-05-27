@@ -29,7 +29,6 @@
         <module>s-provider</module>
         <module>s-proxy</module>
         <module>s-random</module>
-        <module>s-text-interface</module>
         <module>s-text</module>
         <module>s-upload</module>
     </modules>

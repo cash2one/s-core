@@ -132,7 +132,7 @@
         </dependency>
         <dependency>
             <groupId>com.seo</groupId>
-            <artifactId>s-text-interface</artifactId>
+            <artifactId>s-text</artifactId>
             <version>0.2-SNAPSHOT</version>
         </dependency>
         <dependency>
