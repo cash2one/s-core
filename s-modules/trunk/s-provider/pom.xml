@@ -43,7 +43,7 @@
         </dependency>
         <dependency>
             <groupId>com.seo</groupId>
-            <artifactId>s-useragent-interface</artifactId>
+            <artifactId>s-useragent</artifactId>
             <version>0.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
