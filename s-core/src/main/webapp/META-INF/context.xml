@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Context path="/s-core">
-    <ResourceLink name="configLocation" global="scoreConfigLocation" type="java.lang.String"/>
-</Context>
