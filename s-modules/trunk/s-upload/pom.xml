@@ -55,7 +55,7 @@
         </dependency>
         <dependency>
             <groupId>com.seo</groupId>
-            <artifactId>s-proxy-interface</artifactId>
+            <artifactId>s-proxy</artifactId>
             <version>0.2-SNAPSHOT</version>
         </dependency>
         <dependency>

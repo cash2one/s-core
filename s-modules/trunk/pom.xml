@@ -27,8 +27,7 @@
         <module>s-indexchecker</module>
         <module>s-messages</module>
         <module>s-provider</module>
-        <module>s-proxy-interface</module>
-        <module>s-insorg</module>
+        <module>s-proxy</module>
         <module>s-random</module>
         <module>s-text-interface</module>
         <module>s-text</module>
