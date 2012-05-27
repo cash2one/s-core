@@ -1,5 +1,5 @@
 package com.seo.checker.pop;
 
-public interface FtpAccountChecker {
+public interface EmailAccountChecker {
     boolean checkAccount(String host, String login, String password);
 }
