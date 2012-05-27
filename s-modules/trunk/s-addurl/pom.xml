@@ -48,7 +48,7 @@
         </dependency>
         <dependency>
             <groupId>com.seo</groupId>
-            <artifactId>s-webclient-interface</artifactId>
+            <artifactId>s-webclient</artifactId>
             <version>0.1</version>
         </dependency>
         <dependency>

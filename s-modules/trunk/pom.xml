@@ -12,7 +12,6 @@
     <modules>
         <module>s-core-parent</module>
         <module>s-useragent</module>
-        <module>s-webclient-interface</module>
         <module>s-webclient</module>
         <module>s-addurl</module>
         <module>s-antigate</module>
