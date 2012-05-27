@@ -13,7 +13,6 @@
         <module>s-core-parent</module>
         <module>s-useragent-interface</module>
         <module>s-useragent</module>
-        <module>s-captcha-interface</module>
         <module>s-webclient-interface</module>
         <module>s-webclient</module>
         <module>s-addurl</module>
