@@ -16,10 +16,8 @@
         <module>s-captcha-interface</module>
         <module>s-webclient-interface</module>
         <module>s-webclient</module>
-        <module>s-addurl-interface</module>
         <module>s-addurl</module>
         <module>s-antigate</module>
-        <module>s-blogposter-interface</module>
         <module>s-blogposter</module>
         <module>s-checker-interface</module>
         <module>s-checker</module>

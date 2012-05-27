@@ -23,12 +23,7 @@
     <dependencies>
         <dependency>
             <groupId>com.seo</groupId>
-            <artifactId>s-addurl-interface</artifactId>
-            <version>0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.seo</groupId>
-            <artifactId>s-proxy-interface</artifactId>
+            <artifactId>s-insorg</artifactId>
             <version>0.2-SNAPSHOT</version>
         </dependency>
         <dependency>
