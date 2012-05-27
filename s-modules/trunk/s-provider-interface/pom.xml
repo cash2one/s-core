@@ -36,7 +36,12 @@
     <dependencies>
         <dependency>
             <groupId>com.seo</groupId>
-            <artifactId>s-checker-interface</artifactId>
+            <artifactId>s-insorg</artifactId>
+            <version>0.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.seo</groupId>
+            <artifactId>s-checker</artifactId>
             <version>0.2-SNAPSHOT</version>
         </dependency>
         <dependency>

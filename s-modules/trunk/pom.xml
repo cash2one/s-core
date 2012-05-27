@@ -18,7 +18,6 @@
         <module>s-addurl</module>
         <module>s-antigate</module>
         <module>s-blogposter</module>
-        <module>s-checker-interface</module>
         <module>s-checker</module>
         <module>s-compress</module>
         <module>s-doorgen</module>
