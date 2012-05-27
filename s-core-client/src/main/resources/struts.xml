@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.multipart.maxSize" value="200000000" />    
+    <constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory"/>
+    <constant name="struts.custom.i18n.resources" value="properties.validation"/>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+
+    <package name="seo-core" extends="tiles-default">
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" default="true"/>
+        </result-types>
+        <interceptors>
+            <interceptor name="fileUpload" class="org.apache.struts2.interceptor.FileUploadInterceptor">
+                <param name="maximumSize">200000000</param>
+            </interceptor>
+        </interceptors>
+
+        <action name="mainpage" class="mainPageAction">
+            <result name="success" type="tiles">main.page</result>
+        </action>
+
+        <!--begin doorway configuration crud actions-->
+        <action name="listDoorwayConfigurations" class="listDoorwayConfigurationAction">
+            <result name="success">listDoorwayConfigurations.page</result>
+        </action>
+        <action name="createDoorwayConfiguration" class="createDoorwayConfigurationAction">
+            <result name="success">editDoorwayConfiguration.page</result>
+        </action>
+        <action name="editDoorwayConfiguration" class="editDoorwayConfigurationAction">
+            <result name="success">editDoorwayConfiguration.page</result>
+        </action>
+        <action name="saveDoorwayConfiguration" class="saveDoorwayConfigurationAction">
+            <result name="input">editDoorwayConfiguration.page</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">listDoorwayConfigurations</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="deleteDoorwayConfiguration" class="deleteDoorwayConfigurationAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listDoorwayConfigurations</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <!--end doorway configuration crud actions-->
+
+        <!--begin template crud actions-->
+        <action name="listTemplates" class="listTemplateAction">
+            <result name="success">listTemplates.page</result>
+        </action>
+        <action name="createTemplate" class="createTemplateAction">
+            <result name="success">editTemplate.page</result>
+        </action>
+        <action name="saveTemplate" class="saveTemplateAction">
+            <result name="input">editTemplate.page</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">listTemplates</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="deleteTemplate" class="deleteTemplateAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listTemplates</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <!--end template crud actions-->
+
+        <!--begin keyword group crud actions-->
+        <action name="listKeywordGroups" class="listKeywordGroupAction">
+            <result name="success">listKeywordGroup.page</result>
+        </action>
+        <action name="createKeywordGroup" class="createKeywordGroupAction">
+            <result name="success">editKeywordGroup.page</result>
+        </action>
+        <action name="saveKeywordGroup" class="saveKeywordGroupAction">
+            <result name="input">editKeywordGroup.page</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">listKeywordGroups</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="deleteKeywordGroup" class="deleteKeywordGroupAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listKeywordGroups</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <!--end keyword group crud actions-->
+
+        <!--begin keyword group crud actions-->
+        <action name="listTextSources" class="listTextSourceAction">
+            <result name="success">listTextSource.page</result>
+        </action>
+        <action name="createTextSource" class="createTextSourceAction">
+            <result name="success">editTextSource.page</result>
+        </action>
+        <action name="saveTextSource" class="saveTextSourceAction">
+            <result name="input">editTextSource.page</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">listTextSources</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="deleteTextSource" class="deleteTextSourceAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listTextSources</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <!--end keyword group crud actions-->
+
+        <!--begin doorway crud actions-->
+        <action name="listDoorways" class="listDoorwayAction">
+            <result name="success">listDoorway.page</result>
+        </action>
+        <!--end doorway crud actions-->
+
+        <!--begin autoconfigs crud actions-->
+        <action name="listAutoConfigs" class="listAutoConfigAction">
+            <result name="success">listAutoConfig.page</result>
+        </action>
+        <action name="createAutoConfig" class="createAutoConfigAction">
+            <result name="success">editAutoConfig.page</result>
+        </action>
+        <action name="saveAutoConfig" class="saveAutoConfigAction">
+            <result name="input">editAutoConfig.page</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">listAutoConfigs</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="deleteAutoConfig" class="deleteAutoConfigAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listAutoConfigs</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <!--end autoconfigs crud actions-->
+
+        <!--begin redirect script crud actions-->
+        <action name="listRedirectScripts" class="listRedirectScriptAction">
+            <result name="success">listRedirectScript.page</result>
+        </action>
+        <action name="createRedirectScript" class="createRedirectScriptAction">
+            <result name="success">editRedirectScript.page</result>
+        </action>
+        <action name="loadRedirectScript" class="loadRedirectScriptAction">
+            <result name="success">editRedirectScript.page</result>
+        </action>
+        <action name="saveRedirectScript" class="saveRedirectScriptAction">
+            <result name="input">editRedirectScript.page</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">listRedirectScripts</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="deleteRedirectScript" class="deleteRedirectScriptAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">listRedirectScripts</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <!--end redirect scripts crud actions-->
+
+        <action name="openCreateDoorwayPage" class="openCreateDoorwayPageAction">
+            <result name="success">createDoorway.page</result>
+        </action>
+        <action name="createDoorway" class="createDoorwayAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">viewTaskStatus</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="runAutoConfig" class="runAutoConfigAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">viewTaskStatus</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="viewTaskStatus" class="viewTaskStatusAction">
+            <result name="success">taskStatus.page</result>
+        </action>
+        <action name="viewTaskMessages" class="viewTaskMessagesAction">
+            <result name="success">taskStatus.page</result>
+        </action>
+        <action name="processDoorwayCommand" class="processDoorwayCommandAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">viewTaskStatus</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="interruptTask" class="interruptTaskAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">viewTaskStatus</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="clearTasks" class="clearTasksAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">viewTaskStatus</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="viewCachedProxies" class="viewCachedProxiesAction">
+            <result name="success">cachedProxies.page</result>
+        </action>
+        <action name="clearProxyCache" class="clearProxyCacheAction">
+            <result name="success">cachedProxies.page</result>
+        </action>
+    </package>
+
+    <package name="json" extends="json-default">
+        <!--<action name="list.ajax" method="listsites" class="ajaxAction">-->
+            <!--<result type="json">-->
+                <!--<param name="excludeProperties">-->
+                    <!--rows.*\.user,-->
+                    <!--rows.*\.hosting,-->
+                    <!--rows.*\.domain,-->
+                    <!--rows.*\.engine,-->
+                    <!--rows.*\.updates,-->
+                    <!--rows.*\.pages-->
+                <!--</param>-->
+            <!--</result>-->
+        <!--</action>-->
+    </package>
+</struts>

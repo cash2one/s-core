@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+    <bean id="doorwayConfigurationDAO" class="com.seo.core.dao.DoorwayConfigurationDAOImpl"/>
+    <bean id="templateDAO" class="com.seo.core.dao.TemplateDAOImpl"/>
+    <bean id="keywordGroupDAO" class="com.seo.core.dao.KeywordGroupDAOImpl"/>
+    <bean id="textSourceDAO" class="com.seo.core.dao.TextSourceDAOImpl"/>
+    <bean id="doorwayDAO" class="com.seo.core.dao.DoorwayDAOImpl"/>
+    <bean id="autoConfigDAO" class="com.seo.core.dao.AutoConfigDAOImpl"/>
+    <bean id="blogAccountDAO" class="com.seo.core.dao.BlogAccountDAOImpl"/>
+    <bean id="emailAccountDAO" class="com.seo.core.dao.EmailAccountDAOImpl"/>
+    <bean id="ftpAccountDAO" class="com.seo.core.dao.FTPAccountDAOImpl"/>
+    <bean id="redirectScriptDAO" class="com.seo.core.dao.RedirectScriptDAOImpl"/>
+</beans>

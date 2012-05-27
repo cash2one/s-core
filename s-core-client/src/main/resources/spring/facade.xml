@@ -1,0 +1,116 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+    <bean id="doorwayConfigurationFacade" class="com.seo.core.facade.DoorwayConfigurationFacadeImpl"/>
+    <bean id="templateFacade" class="com.seo.core.facade.TemplateFacadeImpl"/>
+    <bean id="keywordGroupFacade" class="com.seo.core.facade.KeywordGroupFacadeImpl"/>
+    <bean id="textSourceFacade" class="com.seo.core.facade.TextSourceFacadeImpl"/>
+    <bean id="doorwayFacade" class="com.seo.core.facade.DoorwayFacadeImpl"/>
+    <bean id="autoConfigFacade" class="com.seo.core.facade.AutoConfigFacadeImpl"/>
+    <bean id="blogAccountFacade" class="com.seo.core.facade.BlogAccountFacadeImpl"/>
+    <bean id="emailAccountFacade" class="com.seo.core.facade.EmailAccountFacadeImpl"/>
+    <bean id="ftpAccountFacade" class="com.seo.core.facade.FTPAccountFacadeImpl"/>
+    <bean id="redirectScriptFacade" class="com.seo.core.facade.RedirectScriptFacadeImpl"/>
+    <bean id="promotionFacade" class="com.seo.core.facade.PromotionFacadeImpl"/>
+
+    <!--index-->
+    <bean id="yandexIndexCheckerService" class="com.seo.check.index.service.yandex.YandexIndexCheckerService" scope="prototype"/>
+    <bean id="indexCheckerFacade" class="com.seo.check.index.IndexCheckerFacadeImpl" scope="prototype">
+        <property name="indexCheckerServices">
+            <list>
+                <ref bean="yandexIndexCheckerService"/>
+            </list>
+        </property>
+    </bean>
+
+    <!--text generator-->
+    <bean id="textGeneratorFacade" class="com.seo.text.generation.facade.TextGeneratorFacadeImpl">
+        <property name="textGenerators">
+            <list>
+                <ref bean="clearTextGenerator"/>
+            </list>
+        </property>
+    </bean>
+
+    <!--blog poster-->
+    <bean id="livejournalBlogPoster" class="com.seo.blogposter.impl.LiveJournalBlogPoster"/>
+    <bean id="blogPosterFacade" class="com.seo.blogposter.BlogPosterFacadeImpl">
+        <property name="blogPosters">
+            <list>
+                <ref bean="livejournalBlogPoster"/>
+            </list>
+        </property>
+    </bean>
+
+    <!--upload-->
+    <bean id="directoryUploader" class="com.seo.upload.impl.DirectFTPUploader" scope="prototype"/>
+    <bean id="uploadFacade" class="com.seo.core.facade.upload.UploadFacadeImpl" scope="prototype"/>
+
+    <!--command-->
+    <bean id="promoteDoorwayTask" class="com.seo.core.facade.command.task.PromoteDoorwayTask" scope="prototype"/>
+    <bean id="checkIndexTask" class="com.seo.core.facade.command.task.CheckIndexTask" scope="prototype"/>
+    <bean id="uploadDoorwayTask" class="com.seo.core.facade.command.task.UploadDoorwayTask" scope="prototype"/>
+    <bean id="uploadRedirectScriptTask" class="com.seo.core.facade.command.task.UploadRedirectScriptTask" scope="prototype"/>
+    <bean id="promoteDoorwayCommand" class="com.seo.core.facade.command.impl.PromoteDoorwayCommand">
+        <lookup-method name="createTask" bean="promoteDoorwayTask"/>
+    </bean>
+    <bean id="archivateCommand" class="com.seo.core.facade.command.impl.ArchivateCommand" scope="request"/>
+    <bean id="checkIndexCommand" class="com.seo.core.facade.command.impl.CheckIndexCommand" scope="request">
+        <lookup-method name="createTask" bean="checkIndexTask"/>
+    </bean>
+    <bean id="uploadDoorwayCommand" class="com.seo.core.facade.command.impl.UploadDoorwayCommand" scope="request">
+        <lookup-method name="createTask" bean="uploadDoorwayTask"/>
+    </bean>
+    <bean id="uploadRedirectScriptCommand" class="com.seo.core.facade.command.impl.UploadRedirectScriptCommand" scope="request">
+        <lookup-method name="createTask" bean="uploadRedirectScriptTask"/>
+    </bean>
+    <bean id="doorwayCommandFacade" class="com.seo.core.facade.command.DoorwayCommandFacadeImpl" scope="request">
+        <property name="doorwayCommands">
+            <list>
+                <ref bean="uploadDoorwayCommand"/>
+                <ref bean="checkIndexCommand"/>
+                <ref bean="uploadRedirectScriptCommand"/>
+                <ref bean="promoteDoorwayCommand"/>
+                <ref bean="archivateCommand"/>
+            </list>
+        </property>
+    </bean>
+
+    <!--scheduling-->
+    <bean id="schedulingFacade" class="com.seo.core.facade.SchedulingFacadeImpl"/>
+
+    <!--doorgen integration-->
+    <bean id="createDoorwayTask" class="com.seo.core.facade.doorgen.task.CreateDoorwayTask" scope="prototype"/>
+    <bean id="doorgenFacade" class="com.seo.core.facade.doorgen.DoorgenFacadeImpl" scope="prototype">
+        <lookup-method name="createTask" bean="createDoorwayTask"/>
+    </bean>
+    <bean id="doorwayGeneratorFacadeAdaptor" class="com.seo.core.facade.doorgen.DoorwayGeneratorFacadeAdaptorImpl" scope="prototype"/>
+
+    <!--checkers-->
+    <bean id="ftpAccountChecker" class="com.seo.checker.ftp.FtpAccountCheckerImpl"/>
+    <bean id="emailAccountChecker" class="com.seo.checker.pop.EmailAccountCheckerImpl"/>
+
+    <!--captcha-->
+    <bean id="captchaService" class="com.seo.antigate.AntigateCaptchaServiceImpl"/>
+
+    <!--providers-->
+    <bean id="userAgentProvider" class="com.seo.useragent.TextFileUserAgentProvider">
+        <property name="storePath" value="database/useragents.txt"/>
+    </bean>
+    <bean id="wordProvider" class="com.seo.text.words.TextFileWordProvider"/>
+
+    <!--provider manager-->
+    <bean id="providerManager" class="com.seo.provider.manager.ProviderManagerImpl">
+        <property name="blogAccountProvider" ref="blogAccountFacade"/>
+        <property name="emailProvider" ref="emailAccountFacade"/>
+        <property name="ftpAccountProvider" ref="ftpAccountFacade"/>
+        <property name="ftpAccountChecker" ref="ftpAccountChecker"/>
+        <property name="emailAccountChecker" ref="emailAccountChecker"/>
+        <property name="captchaService" ref="captchaService"/>
+        <property name="userAgentProvider" ref="userAgentProvider"/>
+        <property name="proxyProvider" ref="proxyProvider"/>
+        <property name="wordProvider" ref="wordProvider"/>
+    </bean>
+</beans>

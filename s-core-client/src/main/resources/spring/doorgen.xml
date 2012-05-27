@@ -1,0 +1,60 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+
+    <bean id="keywordInserter" class="com.seo.text.generation.keyword.KeywordInserterImpl"/>
+    <bean id="randomFacade" class="com.seo.random.facade.RandomFacadeImpl"/>
+    <bean id="macrosProcessor" class="com.seo.doorgen.render.macros.MacrosProcessorImpl"/>
+    <bean id="macrosRulesParser" class="com.seo.doorgen.render.macros.xml.MacrosRulesParserImpl"/>
+    <bean id="macrosApplicableFieldsProcessor" class="com.seo.doorgen.render.macros.MacrosApplicableFieldsProcessorImpl"/>
+
+    <bean id="indexPageDoorwayComponent" class="com.seo.doorgen.component.impl.IndexPageDoorwayComponent"/>
+    <bean id="contentPageDoorwayComponent" class="com.seo.doorgen.component.impl.ContentPageDoorwayComponent"/>
+    <bean id="categoryPageDoorwayComponent" class="com.seo.doorgen.component.impl.CategoryPageDoorwayComponent"/>
+    <bean id="sitemapPageDoorwayComponent" class="com.seo.doorgen.component.impl.SitemapPageDoorwayComponent"/>
+    <bean id="robotsPageDoorwayComponent" class="com.seo.doorgen.component.impl.RobotsPageDoorwayComponent"/>
+    <bean id="doorwayComponentFacade" class="com.seo.doorgen.facade.DoorwayComponentFacadeImpl">
+        <property name="doorwayComponents">
+            <list>
+                <ref bean="indexPageDoorwayComponent"/>
+                <ref bean="contentPageDoorwayComponent"/>
+                <ref bean="categoryPageDoorwayComponent"/>
+                <ref bean="robotsPageDoorwayComponent"/>
+                <ref bean="sitemapPageDoorwayComponent"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="pageRenderService" class="com.seo.doorgen.render.services.PageRenderService"/>
+    <bean id="contentRenderService" class="com.seo.doorgen.render.services.ContentRenderService"/>
+    <bean id="dateRenderService" class="com.seo.doorgen.render.services.DateRenderService"/>
+    <bean id="renderServiceFacade" class="com.seo.doorgen.render.RenderServiceFacadeImpl">
+        <property name="services">
+            <list>
+                <ref bean="pageRenderService"/>
+                <ref bean="contentRenderService"/>
+                <ref bean="dateRenderService"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="contextFactory" class="com.seo.doorgen.context.ContextFactoryImpl"/>
+    <bean id="renderFacade" class="com.seo.doorgen.render.RenderFacadeImpl">
+        <property name="tempDirectory" value="${doorway.temp.dir}"/>
+    </bean>
+    <bean id="doorwayGeneratorFacade" class="com.seo.doorgen.facade.DoorwayGeneratorFacadeImpl" scope="prototype"/>
+    <!--begin text generators-->
+    <bean id="clearTextGenerator" class="com.seo.text.generation.impl.ClearTextGenerator"/>
+    <!--end text generators-->
+
+    <!--freemarker-->
+    <bean id="freemarkerWrapper" class="com.seo.doorgen.render.freemarker.FreemarkerWrapperImpl"/>
+
+    <!--media-->
+    <bean id="mediaExtractor" class="com.seo.doorgen.render.media.MediaExtractorImpl"/>
+    <bean id="zipFileDecompressor" class="com.seo.compress.zip.ZipFileDecompressor"/>
+
+    <!--naming-->
+    <bean id="pageNamingStrategy" class="com.seo.doorgen.component.naming.RandomKeywordPageNamingStrategy"/>
+</beans>

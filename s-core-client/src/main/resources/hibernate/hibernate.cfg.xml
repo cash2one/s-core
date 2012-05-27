@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <mapping class="com.seo.core.model.DoorwayConfiguration"/>
+        <mapping class="com.seo.core.model.Template"/>
+        <mapping class="com.seo.core.model.KeywordGroup"/>
+        <mapping class="com.seo.core.model.Keyword"/>
+        <mapping class="com.seo.core.model.KeywordPart"/>
+        <mapping class="com.seo.core.model.TextSource"/>
+        <mapping class="com.seo.core.model.Doorway"/>
+        <mapping class="com.seo.core.model.AutoConfig"/>
+        <mapping class="com.seo.core.model.account.BlogAccount"/>
+        <mapping class="com.seo.core.model.account.EmailAccount"/>
+        <mapping class="com.seo.core.model.account.FTPAccount"/>
+        <mapping class="com.seo.core.model.RedirectScript"/>
+    </session-factory>
+</hibernate-configuration>
