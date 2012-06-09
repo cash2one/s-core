@@ -3,7 +3,7 @@
     <pattern value="macros-rules">
         <object-create-rule classname="java.util.ArrayList"/>
 
-        <pattern value="macros">
+        <pattern value="macros-rule">
             <object-create-rule classname="com.seo.doorgen.model.Macros"/>
             <set-properties-rule/>
 
