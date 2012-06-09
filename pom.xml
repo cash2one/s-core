@@ -8,7 +8,7 @@
     <artifactId>s-core-parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
-    <name>s-core builder</name>
+    <name>s-core distribution</name>
 
     <modules>
         <module>s-core</module>
