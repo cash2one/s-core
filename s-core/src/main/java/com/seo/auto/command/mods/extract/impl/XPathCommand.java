@@ -63,10 +63,6 @@ public class XPathCommand implements ExtractCommand {
                     return result != null;
                 }
             }
-        } catch (IOException e) {
-            LOGGER.error("IOException: " + e.getMessage());
-
-            throw new RuntimeException("cannot extract value");
         } catch (XPatherException e) {
             LOGGER.error("XPathException: " + e.getMessage());
 

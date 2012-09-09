@@ -50,10 +50,6 @@ public class UASParserImpl implements UserAgentParser{
                 }
             }
 
-        } catch (IOException e) {
-            LOGGER.error("I/O error: " + e.getMessage());
-
-            throw new RuntimeException("I/O error: " + e.getMessage());
         } catch (XPatherException e) {
             LOGGER.error("XPath error: " + e.getMessage());
 
