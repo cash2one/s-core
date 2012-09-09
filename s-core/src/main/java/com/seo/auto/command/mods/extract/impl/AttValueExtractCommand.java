@@ -58,22 +58,28 @@ public class AttValueExtractCommand implements ExtractCommand {
 
     @Override
     public boolean extract(String source, Registry registry) {
-        TagNode node = CLEANER.clean(source);
+        try {
+            TagNode node = CLEANER.clean(source);
 
-        TagNode field = node.findElementByAttValue(attribute, value, true, false);
-        if(field == null) {
-            LOGGER.error("no such field: {}={}", attribute, value);
+            TagNode field = node.findElementByAttValue(attribute, value, true, false);
+            if(field == null) {
+                LOGGER.error("no such field: {}={}", attribute, value);
 
-            throw new RuntimeException("no such field");
+                throw new RuntimeException("no such field");
+            }
+
+            String result = field.getAttributeByName(this.field);
+            registry.put(name, result);
+
+            if(LOGGER.isDebugEnabled()) {
+                LOGGER.debug("parsed value: " + name + ":" + result);
+            }
+
+            return result != null;
+        } catch (IOException e) {
+            LOGGER.error("IOException: " + e.getMessage());
         }
 
-        String result = field.getAttributeByName(this.field);
-        registry.put(name, result);
-
-        if(LOGGER.isDebugEnabled()) {
-            LOGGER.debug("parsed value: " + name + ":" + result);
-        }
-
-        return result != null;
+        return false;
     }
 }

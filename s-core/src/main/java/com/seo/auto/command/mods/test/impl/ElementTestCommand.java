@@ -33,9 +33,14 @@ public class ElementTestCommand extends AbstractTestCommand implements TestComma
 
     @Override
     public boolean test(Response response, Registry registry) {
-        TagNode node = CLEANER.clean(response.getContent());
+        try {
+            TagNode node = CLEANER.clean(response.getContent());
 
-        return expected.equals(node.findElementByAttValue(attribute, value, true, false) != null);
+            return expected.equals(node.findElementByAttValue(attribute, value, true, false) != null);
+        } catch (IOException e) {
+            LOGGER.error("IOException: " + e);
+            throw new RuntimeException("ioexception: " + e);
+        }
     }
 
     @Override

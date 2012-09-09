@@ -30,28 +30,34 @@ public class YandexHostingIndexCheckerService implements IndexCheckerService{
         );
 
         HtmlCleaner cleaner = new HtmlCleaner();
-        TagNode rootNode = cleaner.clean(response.getContent());
+        try {
+            TagNode rootNode = cleaner.clean(response.getContent());
 
-        TagNode strongNode = rootNode.findElementByAttValue("class", "b-head-logo__text", true, false);
+            TagNode strongNode = rootNode.findElementByAttValue("class", "b-head-logo__text", true, false);
 
-        if(strongNode != null) {
-            String text = strongNode.getText().toString();
+            if(strongNode != null) {
+                String text = strongNode.getText().toString();
 
-            text = text.replace("&nbsp;", " ");
+                text = text.replace("&nbsp;", " ");
 
-            Pattern pattern = Pattern.compile("Нашлось(.*?) ответов");
-            Matcher matcher = pattern.matcher(text);
+                Pattern pattern = Pattern.compile("Нашлось(.*?) ответов");
+                Matcher matcher = pattern.matcher(text);
 
-            if(matcher.find()) {
-                String value = matcher.group(1);
-                value = value.replace(" тыс.", "000");
+                if(matcher.find()) {
+                    String value = matcher.group(1);
+                    value = value.replace(" тыс.", "000");
 
-                LOGGER.info("parsed value: {} - {}", url, value);
-            } else {
-                String value = text.replace("\n", "");
+                    LOGGER.info("parsed value: {} - {}", url, value);
+                } else {
+                    String value = text.replace("\n", "");
 
-                LOGGER.debug("not parsed: {} - {}", url, value);
+                    LOGGER.debug("not parsed: {} - {}", url, value);
+                }
             }
+        } catch (IOException e) {
+            LOGGER.error("i/o exception: {} {}", e.getMessage(), e.getStackTrace());
+
+            throw new RuntimeException("i/o exception: " + e.getMessage());
         }
 
         return null;

@@ -40,6 +40,10 @@ public class GoogleNewsParserImpl implements GoogleNewsParser{
                     }
                 }
             }
+        } catch (IOException e) {
+            LOGGER.error("i/o exception: {} {}", e.getMessage(), e.getStackTrace());
+
+            throw new RuntimeException("i/o exception");
         } catch (XPatherException e) {
             LOGGER.error("xpath exception: {} {}", e.getMessage(), e.getStackTrace());
 
