@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="project" type="projectType"/>
+    <xs:complexType name="post-parameterType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name" use="optional"/>
+                <xs:attribute type="xs:string" name="value" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="ftp-testType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="login" use="optional"/>
+                <xs:attribute type="xs:string" name="password" use="optional"/>
+                <xs:attribute type="xs:string" name="host" use="optional"/>
+                <xs:attribute type="xs:string" name="message" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="check-email-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="login" use="optional"/>
+                <xs:attribute type="xs:string" name="password" use="optional"/>
+                <xs:attribute type="xs:string" name="host" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="post-request-commandType">
+        <xs:sequence>
+            <xs:element type="post-parametersType" name="post-parameters"/>
+            <xs:element type="extract-commandsType" name="extract-commands" minOccurs="0"/>
+            <xs:element type="test-commandsType" name="test-commands" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="url" use="required"/>
+        <xs:attribute type="xs:string" name="referer"/>
+    </xs:complexType>
+    <xs:complexType name="commandsType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="anti-captcha-commandType" name="anti-captcha-command"/>
+            <xs:element type="check-email-commandType" name="check-email-command" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element type="check-ftp-account-commandType" name="check-ftp-account-command"/>
+            <xs:element type="delete-email-commandType" name="delete-email-command"/>
+            <xs:element type="email-commandType" name="email-command"/>
+            <xs:element type="generate-string-commandType" name="generate-string-command"/>
+            <xs:element type="generate-time-commandType" name="generate-time-command"/>
+            <xs:element type="generate-number-commandType" name="generate-number-command"/>
+            <xs:element type="load-email-commandType" name="load-email-command"/>
+            <xs:element type="load-ftp-account-commandType" name="load-ftp-account-command"/>
+            <xs:element type="xs:string" name="load-useragent-command"/>
+            <xs:element type="load-proxy-commandType" name="load-proxy-command"/>
+            <xs:element type="get-request-commandType" name="get-request-command"/>
+            <xs:element type="save-image-commandType" name="save-image-command"/>
+            <xs:element type="recaptcha-commandType" name="recaptcha-command"/>
+            <xs:element type="post-request-commandType" name="post-request-command"/>
+            <xs:element type="save-blog-commandType" name="save-blog-command"/>
+            <xs:element type="save-email-commandType" name="save-email-command"/>
+            <xs:element type="save-ftp-account-commandType" name="save-ftp-account-command"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="extract-commandsType">
+        <xs:sequence>
+            <xs:element type="extract-regexp-variableType" name="extract-regexp-variable" maxOccurs="unbounded"
+                        minOccurs="0"/>
+            <xs:element type="extract-xpath-variableType" name="extract-xpath-variable" maxOccurs="unbounded"
+                        minOccurs="0"/>
+            <xs:element type="extract-attr-value-variableType" name="extract-attr-value-variable" maxOccurs="unbounded"
+                        minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="projectType">
+        <xs:sequence>
+            <xs:element type="commandsType" name="commands"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="save-image-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name"/>
+                <xs:attribute type="xs:string" name="url"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="test-commandsType">
+        <xs:sequence>
+            <xs:element type="string-testType" name="string-test" minOccurs="0"/>
+            <xs:element type="ftp-testType" name="ftp-test" minOccurs="0"/>
+            <xs:element type="email-testType" name="email-test" minOccurs="0"/>
+            <xs:element type="element-testType" name="element-test" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="save-blog-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="login" use="required"/>
+                <xs:attribute type="xs:string" name="password" use="required"/>
+                <xs:attribute type="xs:string" name="url" use="required"/>
+                <xs:attribute type="xs:string" name="type" use="required"/>
+                <xs:attribute type="xs:string" name="xmlrpc" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="get-request-commandType">
+        <xs:sequence>
+            <xs:element type="extract-commandsType" name="extract-commands" minOccurs="0"/>
+            <xs:element type="test-commandsType" name="test-commands" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="url" use="required"/>
+        <xs:attribute type="xs:string" name="referer"/>
+    </xs:complexType>
+    <xs:complexType name="extract-xpath-variableType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name" use="required"/>
+                <xs:attribute type="xs:string" name="query" use="required"/>
+                <xs:attribute type="xs:string" name="field" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="delete-email-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="email"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="check-ftp-account-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="login"/>
+                <xs:attribute type="xs:string" name="password"/>
+                <xs:attribute type="xs:string" name="host"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="load-proxy-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="key"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="load-email-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="prefix"/>
+                <xs:attribute type="xs:string" name="host"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="extract-attr-value-variableType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name" use="required"/>
+                <xs:attribute type="xs:string" name="attribute" use="required"/>
+                <xs:attribute type="xs:string" name="value" use="required"/>
+                <xs:attribute type="xs:string" name="field" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="save-ftp-account-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="url" use="required"/>
+                <xs:attribute type="xs:string" name="login" use="required"/>
+                <xs:attribute type="xs:string" name="password" use="required"/>
+                <xs:attribute type="xs:string" name="host" use="required"/>
+                <xs:attribute type="xs:string" name="prefix" use="required"/>
+                <xs:attribute type="xs:string" name="type" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="generate-string-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name" use="required"/>
+                <xs:attribute type="xs:string" name="minSize" use="required"/>
+                <xs:attribute type="xs:string" name="maxSize" use="required"/>
+                <xs:attribute type="xs:string" name="appendDigits"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="generate-time-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="generate-number-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name" use="required"/>
+                <xs:attribute type="xs:string" name="min" use="required"/>
+                <xs:attribute type="xs:string" name="max" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="anti-captcha-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name" use="optional"/>
+                <xs:attribute type="xs:string" name="image" use="optional"/>
+                <xs:attribute type="xs:string" name="ext" use="optional"/>
+                <xs:attribute type="xs:string" name="phrase" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="post-parametersType">
+        <xs:sequence>
+            <xs:element type="post-parameterType" name="post-parameter" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="load-ftp-account-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="prefix"/>
+                <xs:attribute type="xs:string" name="type"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="save-email-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="email" use="required"/>
+                <xs:attribute type="xs:string" name="host" use="required"/>
+                <xs:attribute type="xs:string" name="user" use="required"/>
+                <xs:attribute type="xs:string" name="password" use="required"/>
+                <xs:attribute type="xs:string" name="type" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="extract-regexp-variableType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name" use="required"/>
+                <xs:attribute type="xs:string" name="pattern" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="recaptcha-commandType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name" use="required"/>
+                <xs:attribute type="xs:string" name="url" use="required"/>
+                <xs:attribute type="xs:string" name="image" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="string-testType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="value" use="required"/>
+                <xs:attribute type="xs:string" name="expected"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="email-testType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="login" use="required"/>
+                <xs:attribute type="xs:string" name="password" use="required"/>
+                <xs:attribute type="xs:string" name="host" use="required"/>
+                <xs:attribute type="xs:string" name="message"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="element-testType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="attribute" use="required"/>
+                <xs:attribute type="xs:string" name="value" use="required"/>
+                <xs:attribute type="xs:string" name="expected"/>
+                <xs:attribute type="xs:string" name="message"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="email-commandType" mixed="true">
+        <xs:sequence>
+            <xs:element type="extract-commandsType" name="extract-commands" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="login" use="required"/>
+        <xs:attribute type="xs:string" name="password" use="required"/>
+        <xs:attribute type="xs:string" name="host" use="required"/>
+        <xs:attribute type="xs:string" name="sleep" use="required"/>
+        <xs:attribute type="xs:string" name="attempts" use="required"/>
+    </xs:complexType>
+</xs:schema>

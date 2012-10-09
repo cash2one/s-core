@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../src/main/resources/config.xml.xsd">
+    <commands>
+        <load-useragent-command/>
+        <load-proxy-command key="livejournal"/>
+
+        <load-email-command prefix="email" host="pop.yandex.ru"/>
+
+        <get-request-command url="https://www.livejournal.com/create.bml" referer="http://www.livejournal.com/">
+            <extract-commands>
+                <extract-regexp-variable name="recaptcha_url1"
+                                         pattern="&quot;(https://api-secure.recaptcha.net/challenge.+?)&quot;"/>
+                <extract-attr-value-variable name="form_auth" attribute="name" value="lj_form_auth" field="value"/>
+            </extract-commands>
+        </get-request-command>
+
+        <recaptcha-command name="recaptcha_challenge1" url="${recaptcha_url1}" image="recaptcha_response1"/>
+
+        <generate-string-command name="login" minSize="10" maxSize="14"/>
+        <generate-string-command name="password" minSize="6" maxSize="8" appendDigits="true"/>
+        <generate-number-command name="bday_dd" min="10" max="28"/>
+        <generate-number-command name="bday_mm" min="1" max="12"/>
+        <generate-number-command name="bday_yyyy" min="1970" max="1990"/>
+
+
+        <post-request-command url="https://www.livejournal.com/create.bml" referer="https://www.livejournal.com/create.bml">
+            <post-parameters>
+                <post-parameter name="Widget[CreateAccount]_bday_dd" value="${bday_dd}"/>
+                <post-parameter name="Widget[CreateAccount]_bday_mm" value="${bday_mm}"/>
+                <post-parameter name="Widget[CreateAccount]_bday_yyyy" value="${bday_yyyy}"/>
+                <post-parameter name="Widget[CreateAccount]_email" value="${email}"/>
+                <post-parameter name="Widget[CreateAccount]_password1" value="${password}"/>
+                <post-parameter name="Widget[CreateAccount]_password2" value="${password}"/>
+                <post-parameter name="Widget[CreateAccount]_gender" value="M"/>
+                <post-parameter name="Widget[CreateAccount]_setLiveId" value="no"/>
+                <post-parameter name="Widget[CreateAccount]_submit" value="Create Account"/>
+                <post-parameter name="Widget[CreateAccount]_user" value="${login}"/>
+                <post-parameter name="lj_form_auth" value="${form_auth}"/>
+                <post-parameter name="recaptcha_challenge_field" value="${recaptcha_challenge1}"/>
+                <post-parameter name="recaptcha_response_field" value="${recaptcha_response1}"/>
+            </post-parameters>
+            <test-commands>
+                <string-test value="create/step2"/>
+            </test-commands>
+        </post-request-command>
+        <email-command login="${emaillogin}" password="${emailpassword}" host="${emailhost}" sleep="25000" attempts="5">
+            <extract-commands>
+                <extract-regexp-variable name="activate_url" pattern="(http://www\.livejournal\.com/confirm/.+)$"/>
+            </extract-commands>
+        </email-command>
+
+        <get-request-command url="${activate_url}"/>
+        <save-blog-command login="${login}" password="${password}" url="http://${login}.livejournal.com"
+                           type="livejournal"
+                           xmlrpc="http://www.livejournal.com/interface/xmlrpc"/> 
+    </commands>
+</project>
