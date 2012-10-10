@@ -10,11 +10,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "doorway_configuration")
-public class DoorwayConfiguration implements Serializable {
-    @Id
-    @GeneratedValue
-    private Long id;
-
+public class DoorwayConfiguration extends BaseModel {
     @Basic
     private String name;
 
@@ -29,14 +25,6 @@ public class DoorwayConfiguration implements Serializable {
 
     @Embedded
     private CategoryPageConfiguration categoryPageConfiguration;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

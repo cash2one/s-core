@@ -1,5 +1,6 @@
 package com.seo.core.model.account;
 
+import com.seo.core.model.BaseModel;
 import com.seo.provider.model.Email;
 
 import javax.persistence.Entity;
@@ -9,10 +10,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "email_account")
-public class EmailAccount implements Email {
-    @Id
-    @GeneratedValue
-    private Long id;
+public class EmailAccount extends BaseModel implements Email {
+
     private String email;
     private String host;
     private String user;
@@ -28,13 +27,6 @@ public class EmailAccount implements Email {
         this.password = password;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getEmail() {
         return email;

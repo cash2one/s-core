@@ -5,11 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "auto_config")
-public class AutoConfig implements Serializable{
-    @Id
-    @GeneratedValue
-    private Long id;
-
+public class AutoConfig extends BaseModel {
     @Basic
     private String name;
 
@@ -23,14 +19,6 @@ public class AutoConfig implements Serializable{
         this.id = id;
         this.name = name;
         this.config = config;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

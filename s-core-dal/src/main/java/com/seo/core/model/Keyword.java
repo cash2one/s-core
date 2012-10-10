@@ -5,14 +5,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "keyword")
-public class Keyword {
-    @Id
-    @GeneratedValue
-    @Column(name = "keyword_id")
-    private Long id;
+public class Keyword extends BaseModel {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "keyword_id")
+    @JoinColumn(name = "id")
     private List<KeywordPart> keywordParts;
 
     public Keyword() {
@@ -20,14 +16,6 @@ public class Keyword {
 
     public Keyword(List<KeywordPart> keywordParts) {
         this.keywordParts = keywordParts;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public List<KeywordPart> getKeywordParts() {

@@ -5,17 +5,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "keyword_group")
-public class KeywordGroup {
-    @Id
-    @GeneratedValue
-    @Column(name = "keyword_group_id")
-    private Long id;
-
+public class KeywordGroup extends BaseModel {
     @Basic
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "keyword_group_id")
+    @JoinColumn(name = "id")
     private List<Keyword> keywords;
 
     public KeywordGroup() {
@@ -24,14 +19,6 @@ public class KeywordGroup {
     public KeywordGroup(String name, List<Keyword> keywords) {
         this.name = name;
         this.keywords = keywords;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

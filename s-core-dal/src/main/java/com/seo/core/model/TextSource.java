@@ -5,10 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "text_source")
-public class TextSource implements Serializable{
-    @Id
-    @GeneratedValue
-    private Long id;
+public class TextSource extends BaseModel {
     private String name;
     @Lob
     @Basic(fetch = FetchType.LAZY)
@@ -20,14 +17,6 @@ public class TextSource implements Serializable{
     public TextSource(String name, String content) {
         this.name = name;
         this.content = content;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

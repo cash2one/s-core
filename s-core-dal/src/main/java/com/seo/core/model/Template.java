@@ -4,11 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "template")
-public class Template {
-    @Id
-    @GeneratedValue
-    private Long id;
-
+public class Template extends BaseModel {
     @Basic
     private String name;
 
@@ -52,14 +48,6 @@ public class Template {
         this.sitemapTemplate = sitemapTemplate;
         this.sitemapXmlTemplate = sitemapXmlTemplate;
         this.media = media;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

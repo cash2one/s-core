@@ -1,15 +1,13 @@
 package com.seo.core.model.account;
 
+import com.seo.core.model.BaseModel;
 import com.seo.provider.model.FTP;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "ftp_account")
-public class FTPAccount implements FTP {
-    @Id
-    @GeneratedValue
-    private Long id;
+public class FTPAccount extends BaseModel implements FTP {
     private String url;
     private String host;
     private String login;
@@ -30,10 +28,6 @@ public class FTPAccount implements FTP {
         this.prefix = prefix;
         this.type = type;
         this.state = state;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public void setUrl(String url) {

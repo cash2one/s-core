@@ -4,11 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "keyword_part")
-public class KeywordPart {
-    @Id
-    @GeneratedValue
-    private Long id;
-
+public class KeywordPart extends BaseModel {
     @Basic
     private String content;
 
@@ -17,14 +13,6 @@ public class KeywordPart {
 
     public KeywordPart(String content) {
         this.content = content;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getContent() {

@@ -7,11 +7,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "doorway")
-public class Doorway implements Serializable{
-    @Id
-    @GeneratedValue
-    private Long id;
-
+public class Doorway extends BaseModel {
     @Column(name = "doorway_state")
     @Basic
     private DoorwayState doorwayState;
@@ -38,14 +34,6 @@ public class Doorway implements Serializable{
         this.url = url;
         this.ftpAccount = ftpAccount;
         this.redirectScript = redirectScript;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public DoorwayState getDoorwayState() {
