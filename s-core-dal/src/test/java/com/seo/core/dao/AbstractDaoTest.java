@@ -12,7 +12,7 @@ public abstract class AbstractDaoTest extends AbstractDalTest {
     public abstract BaseModel createModel();
 
     @Test
-    public void testSave(){
+    public void testSave() {
         BaseModel model = createModel();
 
         model = repository.save(model);
@@ -20,5 +20,33 @@ public abstract class AbstractDaoTest extends AbstractDalTest {
         BaseModel loaded = repository.findOne(model.getId());
 
         assertEquals(model.getId(), loaded.getId());
+    }
+
+    @Test
+    public void testFind() {
+        BaseModel model = createModel();
+
+        model = repository.save(model);
+
+        repository.save(createModel());
+        repository.save(createModel());
+
+        BaseModel loaded = repository.findOne(model.getId());
+
+        assertEquals(loaded.getId(), model.getId());
+    }
+
+    @Test
+    public void testDelete() {
+        BaseModel model = createModel();
+
+        model = repository.save(model);
+
+        Long id = model.getId();
+        assertNotNull(model.getId());
+
+        repository.delete(model);
+
+        assertNull(repository.findOne(id));
     }
 }

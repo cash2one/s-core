@@ -16,7 +16,7 @@
 
     <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost/s_core?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8"/>
+        <property name="url" value="jdbc:mysql://localhost/score?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8"/>
         <property name="username" value="cinsay"/>
         <property name="password" value="cinsay"/>
         <property name="validationQuery" value="SELECT 1"/>
@@ -26,7 +26,7 @@
     </bean>
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="packagesToScan" value="com.cinsay.clp.dal.model"/>
+        <property name="packagesToScan" value="com.seo.core.model"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
