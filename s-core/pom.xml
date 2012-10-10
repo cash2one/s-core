@@ -8,19 +8,9 @@
 
     <name>seo-core api module</name>
 
-    <version>0.1</version>
+    <version>1.0-SNAPSHOT</version>
 
     <packaging>jar</packaging>
-
-    <scm>
-        <connection>
-            scm:svn:https://dev/svn/s-auto
-        </connection>
-        <developerConnection>
-            scm:svn:https://dev/svn/s-auto
-        </developerConnection>
-        <url>https://dev/svn/s-auto/trunk</url>
-    </scm>
 
     <dependencies>
         <dependency>
