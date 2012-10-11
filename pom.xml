@@ -18,6 +18,7 @@
         <module>s-core</module>
         <module>s-core-dal</module>
         <module>s-core-client</module>
+        <module>s-auto-api</module>
     </modules>
 
     <build>
