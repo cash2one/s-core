@@ -1,6 +1,7 @@
 package com.seo.auto.web.controller;
 
 import com.seo.auto.web.model.ListConfigsResponseTO;
+import com.seo.auto.web.model.enums.ResponseStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,6 +18,6 @@ public class AutoConfigController {
     public ListConfigsResponseTO listConfigs() {
         List<String> configs = new ArrayList<String>();
 
-        return new ListConfigsResponseTO(configs);
+        return new ListConfigsResponseTO(ResponseStatus.SUCCESS, configs);
     }
 }
