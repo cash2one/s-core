@@ -10,13 +10,20 @@ import javax.inject.Inject;
 
 public class FTPAccountRepositoryTest extends AbstractDaoTest {
 
+    private FTPAccountRepository ftpAccountRepository;
+
     @Inject
     public void setRepository(FTPAccountRepository ftpAccountRepository) {
         this.repository = (BaseRepository) ftpAccountRepository;
+        this.ftpAccountRepository = ftpAccountRepository;
     }
 
     @Override
     public BaseModel createModel() {
-        return new FTPAccount();
+        FTPAccount ftpAccount = new FTPAccount();
+
+        ftpAccount.setType("byethost");
+
+        return ftpAccount;
     }
 }
