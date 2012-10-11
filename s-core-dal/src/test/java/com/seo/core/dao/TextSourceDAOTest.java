@@ -5,11 +5,11 @@ import com.seo.core.model.TextSource;
 
 import javax.inject.Inject;
 
-public class TextSourceRepositoryTest extends AbstractDaoTest {
+public class TextSourceDAOTest extends AbstractDaoTest {
 
     @Inject
-    public void setRepository(TextSourceRepository textSourceRepository) {
-        this.repository = (BaseRepository)textSourceRepository;
+    public void setRepository(TextSourceDAO textSourceDAO) {
+        this.repository = (BaseRepository) textSourceDAO;
     }
 
     @Override

@@ -5,11 +5,11 @@ import com.seo.core.model.KeywordGroup;
 
 import javax.inject.Inject;
 
-public class KeywordGroupRepositoryTest extends AbstractDaoTest {
+public class KeywordGroupDAOTest extends AbstractDaoTest {
 
     @Inject
-    public void setRepository(KeywordGroupRepository keywordGroupRepository) {
-        this.repository = (BaseRepository)keywordGroupRepository;
+    public void setRepository(KeywordGroupDAO keywordGroupDAO) {
+        this.repository = (BaseRepository) keywordGroupDAO;
     }
 
     @Override

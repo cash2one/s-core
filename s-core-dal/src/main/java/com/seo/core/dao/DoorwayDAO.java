@@ -4,5 +4,5 @@ import com.seo.core.model.Doorway;
 
 import java.util.List;
 
-public interface DoorwayRepository extends BaseRepository<Doorway, Long> {
+public interface DoorwayDAO extends BaseRepository<Doorway, Long> {
 }

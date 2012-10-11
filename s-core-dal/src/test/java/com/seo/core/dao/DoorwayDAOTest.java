@@ -5,11 +5,11 @@ import com.seo.core.model.Doorway;
 
 import javax.inject.Inject;
 
-public class DoorwayRepositoryTest extends AbstractDaoTest {
+public class DoorwayDAOTest extends AbstractDaoTest {
 
     @Inject
-    public void setRepository(DoorwayRepository doorwayRepository) {
-        this.repository = (BaseRepository)doorwayRepository;
+    public void setRepository(DoorwayDAO doorwayDAO) {
+        this.repository = (BaseRepository) doorwayDAO;
     }
 
     @Override

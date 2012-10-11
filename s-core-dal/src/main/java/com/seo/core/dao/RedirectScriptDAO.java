@@ -4,5 +4,5 @@ import com.seo.core.model.RedirectScript;
 
 import java.util.List;
 
-public interface RedirectScriptRepository extends BaseRepository<RedirectScript, Long>{
+public interface RedirectScriptDAO extends BaseRepository<RedirectScript, Long>{
 }

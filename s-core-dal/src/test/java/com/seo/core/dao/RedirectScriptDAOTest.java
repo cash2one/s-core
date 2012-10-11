@@ -5,11 +5,11 @@ import com.seo.core.model.RedirectScript;
 
 import javax.inject.Inject;
 
-public class RedirectScriptRepositoryTest extends AbstractDaoTest {
+public class RedirectScriptDAOTest extends AbstractDaoTest {
 
     @Inject
-    public void setRepository(RedirectScriptRepository redirectScriptRepository) {
-        this.repository = (BaseRepository) redirectScriptRepository;
+    public void setRepository(RedirectScriptDAO redirectScriptDAO) {
+        this.repository = (BaseRepository) redirectScriptDAO;
     }
 
     @Override

@@ -4,5 +4,5 @@ import com.seo.core.model.TextSource;
 
 import java.util.List;
 
-public interface TextSourceRepository extends BaseRepository<TextSource, Long> {
+public interface TextSourceDAO extends BaseRepository<TextSource, Long> {
 }

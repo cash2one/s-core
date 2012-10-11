@@ -5,11 +5,11 @@ import com.seo.core.model.BaseModel;
 
 import javax.inject.Inject;
 
-public class AutoConfigRepositoryTest extends AbstractDaoTest {
+public class AutoConfigDAOTest extends AbstractDaoTest {
 
     @Inject
-    public void setRepository(AutoConfigRepository autoConfigRepository) {
-        repository = (BaseRepository) autoConfigRepository;
+    public void setRepository(AutoConfigDAO autoConfigDAO) {
+        repository = (BaseRepository) autoConfigDAO;
     }
 
     @Override
