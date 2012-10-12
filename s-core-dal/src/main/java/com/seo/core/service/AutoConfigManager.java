@@ -4,6 +4,7 @@ import com.seo.core.model.AutoConfig;
 
 import java.util.List;
 
-public interface AutoConfigService {
+public interface AutoConfigManager {
     List<AutoConfig> getAll();
+    AutoConfig save(AutoConfig autoConfig);
 }

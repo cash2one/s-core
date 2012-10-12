@@ -7,13 +7,13 @@ import org.junit.Test;
 import javax.inject.Inject;
 import java.util.List;
 
-public class AutoConfigServiceTest extends AbstractDalTest {
+public class AutoConfigManagerTest extends AbstractDalTest {
 
     @Inject
-    private AutoConfigService autoConfigService;
+    private AutoConfigManager autoConfigManager;
 
     @Test
     public void testGetAll() {
-        List<AutoConfig> results = autoConfigService.getAll();
+        List<AutoConfig> results = autoConfigManager.getAll();
     }
 }

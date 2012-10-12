@@ -2,7 +2,7 @@ package com.seo.core.service.impl;
 
 import com.seo.core.dao.AutoConfigDAO;
 import com.seo.core.model.AutoConfig;
-import com.seo.core.service.AutoConfigService;
+import com.seo.core.service.AutoConfigManager;
 import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Named
-public class AutoConfigServiceImpl implements AutoConfigService {
+public class AutoConfigManagerImpl implements AutoConfigManager {
 
-    private static final Logger logger = LoggerFactory.getLogger(AutoConfigServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(AutoConfigManagerImpl.class);
 
     @Inject
     private AutoConfigDAO autoConfigDAO;
@@ -29,5 +29,12 @@ public class AutoConfigServiceImpl implements AutoConfigService {
         CollectionUtils.addAll(autoConfigs, autoConfigDAO.findAll().iterator());
 
         return autoConfigs;
+    }
+
+    @Override
+    public AutoConfig save(AutoConfig autoConfig) {
+        logger.debug("saving autoconfig, id={}", autoConfig.getId());
+
+        return autoConfigDAO.save(autoConfig);
     }
 }
