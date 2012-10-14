@@ -91,6 +91,7 @@ public class AntigateConnectorImpl implements AntigateConnector {
             throw new IllegalStateException("id == null");
         }
 
+        //herp
         String antigateResponse;
         try {
             antigateResponse = postReportRequest(imageId);
