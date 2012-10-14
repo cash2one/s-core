@@ -37,4 +37,11 @@ public class AutoConfigManagerImpl implements AutoConfigManager {
 
         return autoConfigDAO.save(autoConfig);
     }
+
+    @Override
+    public AutoConfig findById(Long id) {
+        logger.debug("finding autoconfig by id={}", id);
+
+        return autoConfigDAO.findOne(id);
+    }
 }

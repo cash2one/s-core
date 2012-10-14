@@ -4,4 +4,5 @@ import com.seo.message.MessageNotifier;
 
 public interface ConfigFacade extends MessageNotifier{
     void processConfig(String config);
+    boolean validateConfig(String config);
 }

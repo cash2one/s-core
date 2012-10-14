@@ -9,11 +9,13 @@ import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import javax.inject.Named;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
 
+@Named
 public class ProjectParserImpl implements ProjectParser{
     private final static Logger LOGGER = LoggerFactory.getLogger(ProjectParserImpl.class);
 

@@ -10,11 +10,16 @@ import com.seo.message.model.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public abstract class ConfigFacadeImpl implements ConfigFacade {
+import javax.inject.Inject;
+import javax.inject.Named;
+
+@Named
+public class ConfigFacadeImpl implements ConfigFacade {
     private final static Logger LOGGER = LoggerFactory.getLogger(ConfigFacadeImpl.class);
 
     private final static int MAX_ATTEMPT_COUNT = 10;
 
+    @Inject
     private ProjectParser projectParser;
     private MessageListener messageListener;
 
@@ -22,14 +27,22 @@ public abstract class ConfigFacadeImpl implements ConfigFacade {
         this.messageListener = messageListener;
     }
 
-    public void setProjectParser(ProjectParser projectParser) {
-        this.projectParser = projectParser;
+    @Override
+    public boolean validateConfig(String config) {
+        try {
+            projectParser.parseConfig(config);
+        } catch (ConfigErrorException e) {
+            LOGGER.debug("can't parse config: {}", config);
+
+            return false;
+        }
+
+        return true;
     }
 
     @Override
     public void processConfig(String config) {
         Project project;
-
 
         try {
             project = projectParser.parseConfig(config);
@@ -64,5 +77,7 @@ public abstract class ConfigFacadeImpl implements ConfigFacade {
         }
     }
 
-    protected abstract CommandProcessor createCommandProcessor();
+    protected CommandProcessor createCommandProcessor() {
+        return null;
+    }
 }

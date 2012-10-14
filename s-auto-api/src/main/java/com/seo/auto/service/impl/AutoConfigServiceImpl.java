@@ -1,5 +1,6 @@
 package com.seo.auto.service.impl;
 
+import com.seo.auto.facade.ConfigFacade;
 import com.seo.auto.service.AutoConfigService;
 import com.seo.core.model.AutoConfig;
 import com.seo.core.service.AutoConfigManager;
@@ -18,6 +19,9 @@ public class AutoConfigServiceImpl implements AutoConfigService {
     @Inject
     private AutoConfigManager autoConfigManager;
 
+    @Inject
+    private ConfigFacade configFacade;
+
     @Override
     public List<AutoConfig> getAll() {
         logger.debug("getting auto configs list");
@@ -29,6 +33,12 @@ public class AutoConfigServiceImpl implements AutoConfigService {
     public AutoConfig save(AutoConfig autoConfig) {
         logger.debug("saving auto config, id={}, name={}", autoConfig.getId(), autoConfig.getName());
 
-        return autoConfigManager.save(autoConfig);
+        boolean isValidConfig = configFacade.validateConfig(autoConfig.getConfig());
+
+        if(isValidConfig) {
+            return autoConfigManager.save(autoConfig);
+        } else {
+            throw new IllegalArgumentException("Invalid config format!");
+        }
     }
 }
