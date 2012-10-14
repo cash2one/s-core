@@ -22,6 +22,12 @@
 
         <dependency>
             <groupId>com.seo</groupId>
+            <artifactId>s-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.seo</groupId>
             <artifactId>s-core-dal</artifactId>
             <type>test-jar</type>
             <version>${project.version}</version>
