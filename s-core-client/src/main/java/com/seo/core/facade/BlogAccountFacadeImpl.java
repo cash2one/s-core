@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.inject.Named;
 import java.util.List;
 
 public class BlogAccountFacadeImpl implements BlogAccountFacade{

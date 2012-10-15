@@ -10,6 +10,11 @@ import com.seo.provider.manager.ProviderManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Scope;
+
+@Named
 public class CommandProcessorImpl implements CommandProcessor{
     private final static Logger LOGGER = LoggerFactory.getLogger(CommandProcessorImpl.class);
 

@@ -23,6 +23,9 @@ public class ConfigFacadeImpl implements ConfigFacade {
     private ProjectParser projectParser;
     private MessageListener messageListener;
 
+    @Inject
+    private CommandProcessor commandProcessor;
+
     public void setMessageListener(MessageListener messageListener) {
         this.messageListener = messageListener;
     }
