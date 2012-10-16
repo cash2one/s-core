@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 
+import javax.inject.Named;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+@Named
 public class TextFileWordProvider extends AbstractWordProvider implements WordProvider, InitializingBean{
     private final static Logger LOGGER = LoggerFactory.getLogger(TextFileWordProvider.class);
 

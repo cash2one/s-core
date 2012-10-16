@@ -23,7 +23,9 @@ public class ProviderManagerImpl implements ProviderManager{
     @Inject
     private CaptchaService captchaService;
     private ProxyProvider proxyProvider;
+    @Inject
     private UserAgentProvider userAgentProvider;
+    @Inject
     private WordProvider wordProvider;
 
     @Override
