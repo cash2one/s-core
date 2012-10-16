@@ -15,15 +15,21 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.Collection;
 
+@Named
 public class InsorgServiceConnectorImpl implements InsorgProxyConnector{
     private final static Integer INITIAL_PAGE = 1;
 
     private final static Logger LOGGER = LoggerFactory.getLogger(InsorgServiceConnectorImpl.class);
 
+    @Inject
     private DefaultHttpClientWrapper defaultHttpClientWrapper;
+    @Inject
     private ResponseParser responseParser;
+    @Inject
     private RequestFactory requestFactory;
 
     private Integer pageNumber = INITIAL_PAGE;

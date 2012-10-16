@@ -22,6 +22,7 @@ public class ProviderManagerImpl implements ProviderManager{
     private EmailAccountChecker emailAccountChecker;
     @Inject
     private CaptchaService captchaService;
+    @Inject
     private ProxyProvider proxyProvider;
     @Inject
     private UserAgentProvider userAgentProvider;

@@ -1,6 +1,7 @@
 package com.seo.auto.facade;
 
 import com.seo.BaseCoreTest;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.inject.Inject;
@@ -20,6 +21,7 @@ public class ConfigFacadeTest extends BaseCoreTest {
             "</project>";
 
     @Test
+    @Ignore
     public void testRunConfig() {
         configFacade.processConfig(TEST_CONFIG);
     }

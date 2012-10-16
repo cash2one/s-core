@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -23,10 +24,7 @@ public class TextFileUserAgentProvider implements UserAgentProvider {
 
     private String storePath = "database/useragents.txt";
 
-    public TextFileUserAgentProvider() {
-        init();
-    }
-
+    @PostConstruct
     private void init() {
         try {
             BufferedReader input = readFile();
