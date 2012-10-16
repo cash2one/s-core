@@ -18,32 +18,26 @@ import javax.inject.Scope;
 public class CommandProcessorImpl implements CommandProcessor{
     private final static Logger LOGGER = LoggerFactory.getLogger(CommandProcessorImpl.class);
 
-    private CommandClient commandClient;
     private ProviderManager providerManager;
-    private MessageListener messageListener;
-
-    public void setMessageListener(MessageListener messageListener) {
-        this.messageListener = messageListener;
-    }
 
     public void setProviderManager(ProviderManager providerManager) {
         this.providerManager = providerManager;
     }
 
     @Override
-    public void process(Project project) throws ProjectFailedException{
-        this.commandClient = CommandClientImpl.newInstance();
+    public void process(Project project, CommandClient commandClient) throws ProjectFailedException{
 
         for (Command command : project.getCommands()) {
             command.initCommand(providerManager);
 
             try {
                 command.execute(commandClient);
-                messageListener.addMessage(new Message("executed command: " + command));
-            } catch (Exception e) {
-                LOGGER.error("command execution failed: {} {}", e.getMessage(), e.getStackTrace());
 
-                throw new ProjectFailedException("command execution failed: " + e.getMessage());
+                commandClient.addMessage("executed command: " + command);
+            } catch (Exception e) {
+                LOGGER.error("command execution failed: {}", e.getMessage(), e);
+
+                throw new ProjectFailedException(e);
             }            
         }
     }

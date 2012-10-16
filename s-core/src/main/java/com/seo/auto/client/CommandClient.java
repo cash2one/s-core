@@ -26,4 +26,6 @@ public interface CommandClient {
      * @return web client
      */
     WebClient getWebClient();
+
+    void addMessage(String message);
 }

@@ -1,7 +1,6 @@
 package com.seo.core.model.account;
 
 import com.seo.core.model.BaseModel;
-import com.seo.provider.model.Email;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "email_account")
-public class EmailAccount extends BaseModel implements Email {
+public class EmailAccount extends BaseModel {
 
     private String email;
     private String host;

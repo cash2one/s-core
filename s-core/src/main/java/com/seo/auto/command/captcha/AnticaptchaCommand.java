@@ -55,7 +55,7 @@ public class AnticaptchaCommand extends AbstractCommand implements Command {
 
             registry.put(name, guessedCaptcha);
         } catch (CaptchaProcessingFailedException e) {
-            LOGGER.error("cannot process captcha: " + e);
+            LOGGER.error("cannot process captcha: ", e);
 
             throw new CommandExecutionFailedException("cannot process captcha: " + e);
         }
