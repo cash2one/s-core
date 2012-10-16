@@ -1,4 +1,4 @@
-package com.seo.auto;
+package com.seo;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -10,5 +10,5 @@ import org.springframework.transaction.annotation.Transactional;
 @RunWith(SpringJUnit4ClassRunner.class)
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 @Transactional
-public class BaseAutoTest {
+public class BaseCoreTest {
 }

@@ -7,6 +7,9 @@ import com.seo.captcha.exception.CaptchaProcessingFailedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Named;
+
+@Named
 public class AntigateCaptchaServiceImpl implements CaptchaService {
     private AntigateConnector antigateConnector;
 
