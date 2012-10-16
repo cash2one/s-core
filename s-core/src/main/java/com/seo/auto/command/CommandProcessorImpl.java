@@ -18,11 +18,8 @@ import javax.inject.Scope;
 public class CommandProcessorImpl implements CommandProcessor{
     private final static Logger LOGGER = LoggerFactory.getLogger(CommandProcessorImpl.class);
 
+    @Inject
     private ProviderManager providerManager;
-
-    public void setProviderManager(ProviderManager providerManager) {
-        this.providerManager = providerManager;
-    }
 
     @Override
     public void process(Project project, CommandClient commandClient) throws ProjectFailedException{

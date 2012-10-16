@@ -29,8 +29,9 @@ import java.util.List;
 @Named
 public class AntigateConnectorImpl implements AntigateConnector {
     private final static Logger LOGGER = LoggerFactory.getLogger(AntigateConnectorImpl.class);
-    private String antigateKey;
-    private String antigateInputUrl;
+
+    private String antigateKey = "8c2e4be86ad80b3ecf53d97af0f9aad2";
+    private String antigateInputUrl = "http://www.antigate.com/in.php";
 
     private final static Integer POST_IMAGE_SLEEP_TIMEOUT = 15000;
     private final static Integer GET_RESPONSE_SLEEP_TIMEOUT = 15000;
