@@ -17,6 +17,8 @@ import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
@@ -24,6 +26,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Named
 public class AntigateConnectorImpl implements AntigateConnector {
     private final static Logger LOGGER = LoggerFactory.getLogger(AntigateConnectorImpl.class);
     private String antigateKey;
@@ -33,11 +36,9 @@ public class AntigateConnectorImpl implements AntigateConnector {
     private final static Integer GET_RESPONSE_SLEEP_TIMEOUT = 15000;
 
     private HttpClient client = new DefaultHttpClientWrapper();
-    private ResponseParser responseParser;
 
-    public void setResponseParser(ResponseParser responseParser) {
-        this.responseParser = responseParser;
-    }
+    @Inject
+    private ResponseParser responseParser;
 
     public void setAntigateKey(String antigateKey) {
         this.antigateKey = antigateKey;

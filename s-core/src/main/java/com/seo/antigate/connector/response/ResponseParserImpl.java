@@ -4,6 +4,9 @@ import com.seo.antigate.connector.response.exception.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Named;
+
+@Named
 public class ResponseParserImpl implements ResponseParser {
     private final static Logger LOGGER = LoggerFactory.getLogger(ResponseParserImpl.class);
     private final static int OK_RESPONSE_SIZE = 3;
