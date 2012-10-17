@@ -55,7 +55,6 @@ public class ConfigFacadeImpl implements ConfigFacade {
             throw new RuntimeException("config error: " + e.getMessage());
         }
 
-        CommandProcessor commandProcessor = createCommandProcessor();
         commandProcessor.setMessageListener(messageListener);
 
         int attemptCount = 0;
@@ -78,9 +77,5 @@ public class ConfigFacadeImpl implements ConfigFacade {
 
             throw new RuntimeException("exceeded attempt count");
         }
-    }
-
-    protected CommandProcessor createCommandProcessor() {
-        return null;
     }
 }
