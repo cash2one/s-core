@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 
+import javax.annotation.PostConstruct;
+import javax.inject.Named;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -12,7 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class TextFileWordProvider extends AbstractWordProvider implements WordProvider, InitializingBean{
+@Named
+public class TextFileWordProvider extends AbstractWordProvider implements WordProvider{
     private final static Logger LOGGER = LoggerFactory.getLogger(TextFileWordProvider.class);
 
     private final static String WORDS_FILE_PATH = "database/words.txt";
@@ -20,6 +23,7 @@ public class TextFileWordProvider extends AbstractWordProvider implements WordPr
     private List<String> words = new ArrayList<String>();
     private Random random = new Random();
 
+    @PostConstruct
     private void init() {
         try {
             BufferedReader input =  readFile();
@@ -36,11 +40,6 @@ public class TextFileWordProvider extends AbstractWordProvider implements WordPr
 
             throw new RuntimeException("IOexception: " + e);
         }
-    }
-
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        init();
     }
 
     private String randomWord() {

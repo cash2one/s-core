@@ -7,16 +7,17 @@ import com.seo.captcha.exception.CaptchaProcessingFailedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class AntigateCaptchaServiceImpl implements CaptchaService {
-    private AntigateConnector antigateConnector;
+import javax.inject.Inject;
+import javax.inject.Named;
 
+@Named
+public class AntigateCaptchaServiceImpl implements CaptchaService {
     private final static Logger LOGGER = LoggerFactory.getLogger(AntigateCaptchaServiceImpl.class);
 
-    private String currentImageId = null;
+    @Inject
+    private AntigateConnector antigateConnector;
 
-    public void setAntigateConnector(AntigateConnector antigateConnector) {
-        this.antigateConnector = antigateConnector;
-    }
+    private String currentImageId = null;
 
     public String retrieve(String image, String ext, boolean phrase) throws CaptchaProcessingFailedException {
         String guessedCaptcha = null;

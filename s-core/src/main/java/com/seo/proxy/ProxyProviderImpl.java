@@ -9,6 +9,9 @@ import com.seo.proxy.service.exception.ProxyServiceNotAvailableException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Named;
+
+@Named
 public class ProxyProviderImpl implements ProxyProvider{
     private final static Logger LOGGER = LoggerFactory.getLogger(ProxyProviderImpl.class);
 

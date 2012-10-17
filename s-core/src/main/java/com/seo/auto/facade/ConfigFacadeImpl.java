@@ -1,5 +1,7 @@
 package com.seo.auto.facade;
 
+import com.seo.auto.client.CommandClient;
+import com.seo.auto.client.CommandClientImpl;
 import com.seo.auto.command.CommandProcessor;
 import com.seo.auto.model.Project;
 import com.seo.auto.model.exception.ProjectFailedException;
@@ -21,21 +23,16 @@ public class ConfigFacadeImpl implements ConfigFacade {
 
     @Inject
     private ProjectParser projectParser;
-    private MessageListener messageListener;
 
     @Inject
     private CommandProcessor commandProcessor;
-
-    public void setMessageListener(MessageListener messageListener) {
-        this.messageListener = messageListener;
-    }
 
     @Override
     public boolean validateConfig(String config) {
         try {
             projectParser.parseConfig(config);
         } catch (ConfigErrorException e) {
-            LOGGER.debug("can't parse config: {}", config);
+            LOGGER.debug("can't parse config: {}", config, e);
 
             return false;
         }
@@ -55,18 +52,18 @@ public class ConfigFacadeImpl implements ConfigFacade {
             throw new RuntimeException("config error: " + e.getMessage());
         }
 
-        commandProcessor.setMessageListener(messageListener);
+        CommandClient commandClient = CommandClientImpl.newInstance();
 
         int attemptCount = 0;
         while (attemptCount < MAX_ATTEMPT_COUNT) {
-            messageListener.addMessage(new Message("starting execution, attempt=" + attemptCount));
+            commandClient.addMessage("starting execution, attempt=" + attemptCount);
 
             try {
-                commandProcessor.process(project);
+                commandProcessor.process(project, commandClient);
 
                 break;
             } catch (ProjectFailedException e) {
-                LOGGER.error("project failed: {}. repeating for the {} time", e.getMessage(), attemptCount);
+                LOGGER.error("project failed: {}. repeating for the {} time", new Object[]{e.getMessage(), attemptCount} , e);
 
                 attemptCount++;
             }

@@ -12,6 +12,7 @@ import org.htmlcleaner.XPatherException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Named;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashSet;
@@ -19,6 +20,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Named
 public class ResponseParserImpl implements ResponseParser {
     private final static Integer SOCKS_PROXY_TD_NUMBER = 0;
     private final static Integer HTTP_PROXY_TD_NUMBER = 1;

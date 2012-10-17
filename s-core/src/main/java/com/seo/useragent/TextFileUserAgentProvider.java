@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 
+import javax.annotation.PostConstruct;
+import javax.inject.Named;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -12,24 +14,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class TextFileUserAgentProvider implements UserAgentProvider, InitializingBean{
+@Named
+public class TextFileUserAgentProvider implements UserAgentProvider {
     private final static Logger LOGGER = LoggerFactory.getLogger(TextFileUserAgentProvider.class);
 
     private final static Random RANDOM = new Random();
 
     private List<String> useragents = new ArrayList<String>();
 
-    private String storePath;
+    private String storePath = "database/useragents.txt";
 
-    public void setStorePath(String storePath) {
-        this.storePath = storePath;
-    }
-
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        init();
-    }
-
+    @PostConstruct
     private void init() {
         try {
             BufferedReader input = readFile();
@@ -39,7 +34,7 @@ public class TextFileUserAgentProvider implements UserAgentProvider, Initializin
                 useragents.add(line);
             }
 
-        } catch(FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             LOGGER.error("File not found: " + e);
 
             throw new RuntimeException("File not found: " + e);

@@ -10,14 +10,18 @@ import com.seo.proxy.service.insorg.model.LoginResponseType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.HashSet;
 import java.util.Set;
 
+@Named
 public class InsorgProxyFacadeImpl implements InsorgProxyFacade{
     private final static Logger LOGGER = LoggerFactory.getLogger(InsorgProxyFacadeImpl.class);
 
+    @Inject
     private InsorgProxyConnector insorgProxyConnector;
-    private Credentials credentials;
+    private Credentials credentials = new Credentials("dwh", "fakepass");
 
     private Set<String> pendingProxyIds;
     private Set<String> processedProxyIds;
@@ -25,14 +29,6 @@ public class InsorgProxyFacadeImpl implements InsorgProxyFacade{
     public InsorgProxyFacadeImpl() {
         pendingProxyIds = new HashSet<String>();
         processedProxyIds = new HashSet<String>();
-    }
-
-    public void setInsorgProxyConnector(InsorgProxyConnector insorgProxyConnector) {
-        this.insorgProxyConnector = insorgProxyConnector;
-    }
-
-    public void setCredentials(Credentials credentials) {
-        this.credentials = credentials;
     }
 
     @Override

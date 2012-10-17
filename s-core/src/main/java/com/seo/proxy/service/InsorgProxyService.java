@@ -8,14 +8,15 @@ import com.seo.proxy.service.insorg.facade.exception.InsorgServiceUnavailableExc
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
+@Named
 public class InsorgProxyService implements ProxyService{
     private final static Logger LOGGER = LoggerFactory.getLogger(InsorgProxyService.class);
 
+    @Inject
     private InsorgProxyFacade insorgProxyFacade;
-
-    public void setInsorgProxyFacade(InsorgProxyFacade insorgProxyFacade) {
-        this.insorgProxyFacade = insorgProxyFacade;
-    }
 
     @Override
     public Proxy getProxy(ProxyType proxyType) throws ProxyServiceNotAvailableException {

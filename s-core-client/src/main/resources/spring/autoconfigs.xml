@@ -11,6 +11,6 @@
     <bean id="configFacade" class="com.seo.auto.facade.ConfigFacadeImpl" scope="prototype">
         <lookup-method name="createCommandProcessor" bean="commandProcessor"/>
     </bean>
-    <bean id="projectParser" class="com.seo.auto.parser.ProjectParserImpl"/>
+    <bean id="projectParser" class="com.seo.auto.parser.ProjectParserImpl">
     <bean id="commandProcessor" class="com.seo.auto.command.CommandProcessorImpl" scope="prototype"/>
 </beans>

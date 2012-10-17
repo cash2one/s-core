@@ -9,10 +9,12 @@ import org.junit.Test;
 
 import javax.inject.Inject;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class BlogAccountDAOTest extends AbstractDaoTest {
 
+    public static final String TEST_BLOG_URL = "http://testblog.livejournal.com";
     private BlogAccountDAO blogAccountDAO;
 
     @Inject
@@ -34,5 +36,17 @@ public class BlogAccountDAOTest extends AbstractDaoTest {
         BlogAccount blogAccount = blogAccountDAO.getRandom();
 
         assertNotNull(blogAccount);
+    }
+
+    @Test
+    public void testFindByUrl() {
+        BaseModel model = createModel();
+        ((BlogAccount)model).setUrl(TEST_BLOG_URL);
+        model = blogAccountDAO.save((BlogAccount)model);
+
+        BlogAccount blogAccount = blogAccountDAO.findByUrl(TEST_BLOG_URL);
+
+        assertNotNull(blogAccount);
+        assertEquals(blogAccount.getUrl(), TEST_BLOG_URL);
     }
 }

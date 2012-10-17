@@ -10,15 +10,23 @@ import com.seo.proxy.ProxyProvider;
 import com.seo.text.words.WordProvider;
 import com.seo.useragent.UserAgentProvider;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
+@Named
 public class ProviderManagerImpl implements ProviderManager{
     private BlogAccountProvider blogAccountProvider;
     private EmailProvider emailProvider;
     private FtpAccountProvider ftpAccountProvider;
     private FtpAccountChecker ftpAccountChecker;
     private EmailAccountChecker emailAccountChecker;
+    @Inject
     private CaptchaService captchaService;
+    @Inject
     private ProxyProvider proxyProvider;
+    @Inject
     private UserAgentProvider userAgentProvider;
+    @Inject
     private WordProvider wordProvider;
 
     @Override

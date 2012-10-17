@@ -1,13 +1,12 @@
 package com.seo.core.model.account;
 
 import com.seo.core.model.BaseModel;
-import com.seo.provider.model.FTP;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "ftp_account")
-public class FTPAccount extends BaseModel implements FTP {
+public class FTPAccount extends BaseModel {
     private String url;
     private String host;
     private String login;
