@@ -8,7 +8,7 @@ import org.apache.http.HttpResponse;
 
 import java.util.Collection;
 
-public interface ResponseParser {
+public interface InsorgResponseParser {
     LoginResponseType parseLoginResponse(HttpResponse response);
     Collection<String> parseGetPageResponse(HttpResponse response) throws InvalidResponseException;
     Proxy parseGetProxyResponse(HttpResponse response, ProxyType proxyType) throws InvalidResponseException;

@@ -10,5 +10,5 @@ import org.springframework.transaction.annotation.Transactional;
 @RunWith(SpringJUnit4ClassRunner.class)
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 @Transactional
-public class BaseCoreTest {
+public abstract class AbstractCoreTest {
 }

@@ -5,7 +5,7 @@ import com.seo.antigate.connector.response.exception.*;
 /**
  * Parses antigate service responses
  */
-public interface ResponseParser {
+public interface AntigateResponseParser {
     /**
      * This method parses string from post image response and returns image id if success
      * or throws an exception if not.

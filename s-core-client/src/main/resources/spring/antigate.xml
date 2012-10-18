@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-autowire="byName">
-    <bean id="responseParser" class="com.seo.antigate.connector.response.ResponseParserImpl"/>
+    <bean id="insorgResponseParser" class="com.seo.antigate.connector.response.AntigateResponseParserImpl"/>
 
     <bean id="antigateConnector" class="com.seo.antigate.connector.AntigateConnectorImpl">
         <property name="antigateKey" value="76094ffba7c0f6bf64319a74fb3b4e51"/>

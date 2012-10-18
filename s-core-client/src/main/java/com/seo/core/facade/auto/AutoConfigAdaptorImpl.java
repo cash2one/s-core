@@ -24,7 +24,6 @@ public class AutoConfigAdaptorImpl implements AutoConfigAdaptor{
     public void execute(AutoConfig autoConfig) {
         LOGGER.debug("executing config facade for config name={}, id={}", autoConfig.getName(), autoConfig.getId());
 
-        configFacade.setMessageListener(messageListener);
         configFacade.processConfig(autoConfig.getConfig());
     }
 }

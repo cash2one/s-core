@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 import javax.inject.Named;
 
 @Named
-public class ResponseParserImpl implements ResponseParser {
-    private final static Logger LOGGER = LoggerFactory.getLogger(ResponseParserImpl.class);
+public class AntigateResponseParserImpl implements AntigateResponseParser {
+    private final static Logger LOGGER = LoggerFactory.getLogger(AntigateResponseParserImpl.class);
     private final static int OK_RESPONSE_SIZE = 3;
 
     @Override

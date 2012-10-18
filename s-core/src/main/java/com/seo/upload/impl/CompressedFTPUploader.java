@@ -81,7 +81,7 @@ public class CompressedFTPUploader extends DirectFTPUploader implements Director
 
 
     private void uncompress(String url, String filename) {
-        Request request = new Request(url + "/unzipper.php?dir=.&unzip=" + filename + "&action=unzip", RequestFactory.GET_METHOD, null, null);
+        Request request = new Request(url + "/unzipper.php?dir=.&unzip=" + filename + "&action=unzip", InsorgRequestFactory.GET_METHOD, null, null);
         Response response = webClient.retrievePage(request);
 
         if (!response.getContent().contains("Archive sucessfuly extracted")) {

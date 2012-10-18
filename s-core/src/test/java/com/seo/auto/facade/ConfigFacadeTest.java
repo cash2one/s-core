@@ -1,12 +1,12 @@
 package com.seo.auto.facade;
 
-import com.seo.BaseCoreTest;
+import com.seo.AbstractCoreTest;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.inject.Inject;
 
-public class ConfigFacadeTest extends BaseCoreTest {
+public class ConfigFacadeTest extends AbstractCoreTest {
 
     @Inject
     private ConfigFacade configFacade;

@@ -10,12 +10,14 @@ import org.apache.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Named;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RequestFactoryImpl implements RequestFactory {
-    private final static Logger LOGGER = LoggerFactory.getLogger(RequestFactoryImpl.class);
+@Named
+public class InsorgRequestFactoryImpl implements InsorgRequestFactory {
+    private final static Logger LOGGER = LoggerFactory.getLogger(InsorgRequestFactoryImpl.class);
 
     private final static String LOGIN_URL = "http://proxy.insorg.org/en/index.php";
     private final static String PROXY_URL = "http://proxy.insorg.org/en/index.php?page=";

@@ -14,9 +14,9 @@
         <property name="credentials" ref="credentials"/>
     </bean>
     <bean id="insorgProxyConnector" class="com.seo.proxy.service.insorg.connector.InsorgServiceConnectorImpl">
-        <property name="responseParser" ref="insorgResponseParser"/>
+        <property name="insorgResponseParser" ref="insorgResponseParser"/>
     </bean>
-    <bean id="insorgResponseParser" class="com.seo.proxy.service.insorg.response.ResponseParserImpl"/>
-    <bean id="requestFactory" class="com.seo.proxy.service.insorg.request.RequestFactoryImpl"/>
+    <bean id="insorgResponseParser" class="com.seo.proxy.service.insorg.response.InsorgResponseParserImpl"/>
+    <bean id="insorgRequestFactory" class="com.seo.proxy.service.insorg.request.InsorgRequestFactoryImpl"/>
     <bean id="defaultHttpClientWrapper" class="com.seo.proxy.service.insorg.client.DefaultHttpClientWrapper"/>
 </beans>

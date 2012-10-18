@@ -2,7 +2,7 @@ package com.seo.antigate.connector;
 
 import com.seo.antigate.client.DefaultHttpClientWrapper;
 import com.seo.antigate.connector.exception.AntigateUnavailableException;
-import com.seo.antigate.connector.response.ResponseParser;
+import com.seo.antigate.connector.response.AntigateResponseParser;
 import com.seo.antigate.connector.response.exception.*;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -39,7 +39,7 @@ public class AntigateConnectorImpl implements AntigateConnector {
     private HttpClient client = new DefaultHttpClientWrapper();
 
     @Inject
-    private ResponseParser responseParser;
+    private AntigateResponseParser antigateResponseParser;
 
     public void setAntigateKey(String antigateKey) {
         this.antigateKey = antigateKey;
@@ -64,7 +64,7 @@ public class AntigateConnectorImpl implements AntigateConnector {
             }
 
             try {
-                imageId = responseParser.processPostImageResponse(antigateResponse);
+                imageId = antigateResponseParser.processPostImageResponse(antigateResponse);
 
                 break;
             } catch (AntigateAccessDeniedException e) {
@@ -104,7 +104,7 @@ public class AntigateConnectorImpl implements AntigateConnector {
         }
 
         try {
-            responseParser.processReportResponse(antigateResponse);
+            antigateResponseParser.processReportResponse(antigateResponse);
         } catch (InvalidRequestException e) {
             LOGGER.error("invalid request: " + e.getMessage());
 
@@ -157,7 +157,7 @@ public class AntigateConnectorImpl implements AntigateConnector {
             }
 
             try {
-                processedImage = responseParser.processResultResponse(response);
+                processedImage = antigateResponseParser.processResultResponse(response);
 
                 break;
             } catch (CaptchaNotReadyException e) {

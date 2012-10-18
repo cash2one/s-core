@@ -21,11 +21,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Named
-public class ResponseParserImpl implements ResponseParser {
+public class InsorgResponseParserImpl implements InsorgResponseParser {
     private final static Integer SOCKS_PROXY_TD_NUMBER = 0;
     private final static Integer HTTP_PROXY_TD_NUMBER = 1;
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(ResponseParserImpl.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(InsorgResponseParserImpl.class);
     private final static HtmlCleaner CLEANER = new HtmlCleaner();
 
     @Override
