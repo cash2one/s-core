@@ -31,7 +31,7 @@ public abstract class PlaceholderSupport {
         } else {
             //no placeholder in string
             if(LOGGER.isDebugEnabled()) {
-                LOGGER.debug("skipping string: " + string);
+                LOGGER.trace("skipping string: " + string);
             }
 
             return string;
