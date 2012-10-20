@@ -6,6 +6,7 @@ import com.seo.core.model.AutoConfig;
 import com.seo.core.service.AutoConfigManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.batch.core.JobExecution;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -22,7 +23,7 @@ public class TaskServiceImpl implements TaskService {
     private JobRunner jobRunner;
 
     @Override
-    public void createTask(Long autoConfigId) {
+    public JobExecution createTask(Long autoConfigId) {
         AutoConfig autoConfig = autoConfigManager.findById(autoConfigId);
 
         if(autoConfig == null) {
@@ -31,6 +32,6 @@ public class TaskServiceImpl implements TaskService {
             throw new IllegalArgumentException("can't find autoconfig, id: " + autoConfigId);
         }
 
-        jobRunner.runJob(autoConfig.getConfig());
+        return jobRunner.runJob(autoConfig.getConfig());
     }
 }

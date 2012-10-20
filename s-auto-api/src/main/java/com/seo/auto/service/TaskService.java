@@ -1,5 +1,7 @@
 package com.seo.auto.service;
 
+import org.springframework.batch.core.JobExecution;
+
 public interface TaskService {
-    void createTask(Long autoConfigId);
+    JobExecution createTask(Long autoConfigId);
 }
