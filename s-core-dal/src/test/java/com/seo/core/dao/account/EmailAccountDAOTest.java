@@ -84,4 +84,20 @@ public class EmailAccountDAOTest extends AbstractDaoTest {
 
         assertNull(notFound);
     }
+
+    @Test
+    public void testDeleteByEmail() {
+        BaseModel model = createModel();
+
+        model = emailAccountDAO.save((EmailAccount)model);
+
+        assertNotNull(model.getId());
+
+        emailAccountDAO.deleteByEmail(((EmailAccount) model).getEmail());
+
+        EmailAccount foundEmailAccount = emailAccountDAO.findByEmail(((EmailAccount) model).getEmail());
+
+        assertNull(foundEmailAccount);
+
+    }
 }

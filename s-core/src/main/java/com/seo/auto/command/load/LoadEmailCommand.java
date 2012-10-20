@@ -4,6 +4,7 @@ import com.seo.auto.client.CommandClient;
 import com.seo.auto.client.registry.Registry;
 import com.seo.auto.command.AbstractCommand;
 import com.seo.auto.command.Command;
+import com.seo.core.model.account.EmailAccount;
 import com.seo.provider.EmailProvider;
 import com.seo.provider.model.Email;
 import org.slf4j.Logger;
@@ -50,7 +51,7 @@ public class LoadEmailCommand extends AbstractCommand implements Command {
 
         EmailProvider emailProvider = getProviderManager().getEmailProvider();
 
-        Email email = host != null
+        EmailAccount email = host != null
                 ? emailProvider.getRandomByHost(host)
                 : emailProvider.getRandomEmail();
 

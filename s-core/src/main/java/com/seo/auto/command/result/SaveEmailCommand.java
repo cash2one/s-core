@@ -34,17 +34,12 @@ public class SaveEmailCommand extends AbstractCommand implements Command {
         this.password = password;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
     @Override
     protected void initializeVariables(Registry registry) {
         email = evaluatePlaceholder(email, registry);
         host = evaluatePlaceholder(host, registry);
         user = evaluatePlaceholder(user, registry);
         password = evaluatePlaceholder(password, registry);
-        type = evaluatePlaceholder(type, registry);
     }
 
     @Override
@@ -53,7 +48,7 @@ public class SaveEmailCommand extends AbstractCommand implements Command {
 
         EmailProvider emailProvider = getProviderManager().getEmailProvider();
 
-        emailProvider.createEmailAccount(email, host, user, password, type);
+        emailProvider.createEmailAccount(email, host, user, password);
     }
 
     @Override

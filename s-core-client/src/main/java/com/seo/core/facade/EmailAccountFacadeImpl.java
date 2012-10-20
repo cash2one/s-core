@@ -21,7 +21,7 @@ public class EmailAccountFacadeImpl implements EmailAccountFacade{
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public Email getRandomByHost(String host) {
+    public EmailAccount getRandomByHost(String host) {
         LOGGER.debug("getting random email by host: {}", host);
 
         return emailAccountDAO.getRandomByHost(host);
@@ -29,7 +29,7 @@ public class EmailAccountFacadeImpl implements EmailAccountFacade{
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public Email getRandomEmail() {
+    public EmailAccount getRandomEmail() {
         LOGGER.debug("getting random email");
 
         return emailAccountDAO.getRandom();
@@ -46,7 +46,7 @@ public class EmailAccountFacadeImpl implements EmailAccountFacade{
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void createEmailAccount(String email, String host, String user, String password, String type) {
+    public void createEmailAccount(String email, String host, String user, String password) {
         LOGGER.debug("creating email: {}", email);
 
         this.save(

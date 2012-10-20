@@ -3,7 +3,6 @@ package com.seo.auto.batch;
 public enum ContextConstants {
     AUTO_CONFIG("com.seo.auto.AutoConfig");
 
-
     private String value;
 
     ContextConstants(String value) {

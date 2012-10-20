@@ -39,9 +39,6 @@ public class TaskServiceTest {
     @Inject
     private AutoConfigService autoConfigService;
 
-    @Inject
-    private JobRepository jobRepository;
-
     @Test
     public void testCreateTask() {
         AutoConfig autoConfig = new AutoConfig();
