@@ -8,7 +8,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.1.xsd">
     <import resource="classpath:/spring/application-dal.xml"/>
 
-    <batch:job id="autoConfigJob" restartable="true" incrementer="runIdIncrementer">
+    <batch:job id="autoConfigJob" restartable="true">
         <batch:step id="processStep">
             <batch:tasklet ref="runAutoConfigTasklet"/>
             <batch:end on="*"/>
@@ -16,9 +16,6 @@
     </batch:job>
 
     <batch:job-repository id="jobRepository" data-source="dataSource" table-prefix="sauto_jobs.BATCH_" isolation-level-for-create="DEFAULT" transaction-manager="transactionManager"/>
-
-
-    <bean id="runIdIncrementer" class="org.springframework.batch.core.launch.support.RunIdIncrementer"/>
 
     <bean id="jobRegistry" class="org.springframework.batch.core.configuration.support.MapJobRegistry" />
 
