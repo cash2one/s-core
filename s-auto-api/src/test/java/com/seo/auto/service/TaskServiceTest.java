@@ -5,13 +5,16 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.inject.Inject;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 @ContextConfiguration(value = "classpath:/spring/test-application-auto.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -56,5 +59,7 @@ public class TaskServiceTest {
                 LOGGER.error("interrupted exception: ", e);
             }
         }
+
+        assertEquals(jobExecution.getStatus(), BatchStatus.COMPLETED);
     }
 }
