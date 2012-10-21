@@ -12,7 +12,8 @@ import static org.junit.Assert.assertNotNull;
 
 public class BlogAccountProviderTest extends AbstractCoreTest {
 
-    public static final String TEST_BLOG_URL = "http://testblog.livejournal.com";
+    private static final String TEST_BLOG_URL = "http://testblog.livejournal.com";
+
     @Inject
     private BlogAccountProvider blogAccountProvider;
 
