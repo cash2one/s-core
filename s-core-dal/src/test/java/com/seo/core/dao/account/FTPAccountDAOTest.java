@@ -38,12 +38,12 @@ public class FTPAccountDAOTest extends AbstractDaoTest {
     public void testFindByType() {
         repository.save(createModel());
 
-        FTPAccount account = ftpAccountDAO.findByType(FTP_ACCOUNT_TYPE);
+        FTPAccount account = ftpAccountDAO.findRandomByType(FTP_ACCOUNT_TYPE);
 
         assertNotNull(account);
         assertEquals(account.getType(), FTP_ACCOUNT_TYPE);
 
-        FTPAccount nonExisting = ftpAccountDAO.findByType("testtype");
+        FTPAccount nonExisting = ftpAccountDAO.findRandomByType("testtype");
 
         assertNull(nonExisting);
     }

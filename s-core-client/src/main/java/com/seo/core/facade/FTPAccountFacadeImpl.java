@@ -74,7 +74,7 @@ public class FTPAccountFacadeImpl implements FTPAccountFacade {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public FTP getAccountByType(String type) {
+    public FTPAccount getAccountByType(String type) {
         LOGGER.debug("loading random account by type, type={}", type);
 
         return ftpAccountDAO.getByType(type);
