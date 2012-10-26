@@ -15,8 +15,11 @@ import javax.inject.Named;
 
 @Named
 public class ProviderManagerImpl implements ProviderManager{
+    @Inject
     private BlogAccountProvider blogAccountProvider;
+    @Inject
     private EmailProvider emailProvider;
+    @Inject
     private FtpAccountProvider ftpAccountProvider;
     private FtpAccountChecker ftpAccountChecker;
     private EmailAccountChecker emailAccountChecker;

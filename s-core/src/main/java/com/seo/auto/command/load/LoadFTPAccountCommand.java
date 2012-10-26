@@ -4,6 +4,7 @@ import com.seo.auto.client.CommandClient;
 import com.seo.auto.client.registry.Registry;
 import com.seo.auto.command.AbstractCommand;
 import com.seo.auto.command.Command;
+import com.seo.core.model.account.FTPAccount;
 import com.seo.provider.FtpAccountProvider;
 import com.seo.provider.model.FTP;
 import org.slf4j.Logger;
@@ -49,7 +50,7 @@ public class LoadFTPAccountCommand extends AbstractCommand implements Command {
         initializeVariables(registry);
 
         FtpAccountProvider ftpAccountProvider = getProviderManager().getFtpAccountProvider();
-        FTP ftpAccount = ftpAccountProvider.getAccountByType(type);
+        FTPAccount ftpAccount = ftpAccountProvider.getAccountByType(type);
 
         registry.put(prefix + HOST, ftpAccount.getHost());
         registry.put(prefix + URL, ftpAccount.getUrl());
