@@ -1,13 +1,19 @@
 package com.seo.auto.facade;
 
 import com.seo.AbstractCoreTest;
+import com.seo.auto.model.Project;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.inject.Inject;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 public class ConfigFacadeTest extends AbstractCoreTest {
 
+    public static final String TEST_CONFIG_INVALID = "invalid config";
     @Inject
     private ConfigFacade configFacade;
 
@@ -22,6 +28,22 @@ public class ConfigFacadeTest extends AbstractCoreTest {
 
     @Test
     public void testRunConfig() {
-        configFacade.processConfig(TEST_CONFIG);
+        Project project = configFacade.processConfig(TEST_CONFIG);
+
+        assertNotNull(project);
+    }
+
+    @Test
+    public void testValidateConfig() {
+        boolean isValidConfig = configFacade.validateConfig(TEST_CONFIG);
+
+        assertTrue(isValidConfig);
+    }
+
+    @Test
+    public void testValidateConfigNegative() {
+        boolean isValidConfig = configFacade.validateConfig(TEST_CONFIG_INVALID);
+
+        assertFalse(isValidConfig);
     }
 }

@@ -41,7 +41,7 @@ public class ConfigFacadeImpl implements ConfigFacade {
     }
 
     @Override
-    public void processConfig(String config) {
+    public Project processConfig(String config) {
         Project project;
 
         try {
@@ -74,5 +74,7 @@ public class ConfigFacadeImpl implements ConfigFacade {
 
             throw new RuntimeException("exceeded attempt count");
         }
+
+        return project;
     }
 }
