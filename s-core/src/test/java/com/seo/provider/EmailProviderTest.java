@@ -9,7 +9,7 @@ import javax.inject.Inject;
 
 import static org.junit.Assert.*;
 
-public class EmailProviderImpl extends AbstractCoreTest {
+public class EmailProviderTest extends AbstractCoreTest {
 
     @Inject
     private EmailProvider emailProvider;
