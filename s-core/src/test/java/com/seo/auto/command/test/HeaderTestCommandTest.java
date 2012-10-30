@@ -1,12 +1,14 @@
 package com.seo.auto.command.test;
 
 import com.seo.auto.client.registry.Registry;
+import com.seo.auto.command.mods.test.exception.TestFailedException;
 import com.seo.auto.command.mods.test.impl.HeaderTestCommand;
 import com.seo.webclient.model.Response;
 import org.junit.Test;
 
 import java.util.HashMap;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class HeaderTestCommandTest {
@@ -24,5 +26,20 @@ public class HeaderTestCommandTest {
         boolean result = headerTestCommand.test(new Response("herp", headers), new Registry());
 
         assertTrue(result);
+    }
+
+    @Test(expected = TestFailedException.class)
+    public void testHeaderTestCommandNegative() {
+        HeaderTestCommand headerTestCommand = new HeaderTestCommand();
+
+        headerTestCommand.setHeader("testheader");
+        headerTestCommand.setValue("testvalue");
+
+        HashMap<String, String> headers = new HashMap<String, String>();
+        headers.put("wrongtestheader", "testvalue");
+
+        boolean result = headerTestCommand.test(new Response("herp", headers), new Registry());
+
+        assertFalse(result);
     }
 }
