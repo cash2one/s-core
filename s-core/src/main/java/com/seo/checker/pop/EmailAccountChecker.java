@@ -1,5 +1,5 @@
 package com.seo.checker.pop;
 
 public interface EmailAccountChecker {
-    boolean checkAccount(String host, String login, String password);
+    boolean checkAccount(String login, String password, String host);
 }
