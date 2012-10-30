@@ -9,8 +9,6 @@ import com.seo.auto.command.exception.CommandExecutionFailedException;
 import java.util.Random;
 
 public class GenerateNumberCommand extends AbstractCommand implements Command{
-    private final static Random RANDOM = new Random();
-
     private final static String NAME = "Generate Number Command";
 
     private String name;
@@ -39,7 +37,10 @@ public class GenerateNumberCommand extends AbstractCommand implements Command{
         Registry registry = commandClient.getRegistry();
         initializeVariables(registry);
 
-        int result = min + RANDOM.nextInt(max - min);
+        Random random = new Random();
+
+        int result = min + random.nextInt(max - min);
+
         registry.put(name, String.valueOf(result));
     }
 
