@@ -21,7 +21,9 @@ public class ProviderManagerImpl implements ProviderManager{
     private EmailProvider emailProvider;
     @Inject
     private FtpAccountProvider ftpAccountProvider;
+    @Inject
     private FtpAccountChecker ftpAccountChecker;
+    @Inject
     private EmailAccountChecker emailAccountChecker;
     @Inject
     private CaptchaService captchaService;

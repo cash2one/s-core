@@ -4,9 +4,11 @@ import org.apache.commons.net.pop3.POP3Client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Named;
 import java.io.IOException;
 import java.net.SocketException;
 
+@Named
 public class EmailAccountCheckerImpl implements EmailAccountChecker {
     private final static Logger LOGGER = LoggerFactory.getLogger(EmailAccountCheckerImpl.class);
 
