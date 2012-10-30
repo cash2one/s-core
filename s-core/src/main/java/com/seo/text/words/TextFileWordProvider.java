@@ -84,6 +84,6 @@ public class TextFileWordProvider extends AbstractWordProvider implements WordPr
 
         String result = getRandomWord(min, max);
 
-        return result.substring(0, result.length() - 2) + "1"; //todo: refactor this
+        return result.substring(0, result.length() - 1) + "1"; //todo: refactor this
     }
 }
