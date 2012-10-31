@@ -15,6 +15,11 @@ public class AutoConfig extends BaseModel {
     public AutoConfig() {
     }
 
+    public AutoConfig(String name, String config) {
+        this.name = name;
+        this.config = config;
+    }
+
     public AutoConfig(Long id, String name, String config) {
         this.id = id;
         this.name = name;

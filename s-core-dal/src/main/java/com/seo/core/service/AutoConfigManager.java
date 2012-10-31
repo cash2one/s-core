@@ -8,4 +8,5 @@ public interface AutoConfigManager {
     List<AutoConfig> getAll();
     AutoConfig save(AutoConfig autoConfig);
     AutoConfig findById(Long id);
+    void delete(Long id);
 }

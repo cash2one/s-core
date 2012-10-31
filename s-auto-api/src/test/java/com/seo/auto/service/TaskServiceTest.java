@@ -64,5 +64,7 @@ public class TaskServiceTest {
         }
 
         assertEquals(jobExecution.getStatus(), BatchStatus.COMPLETED);
+
+        autoConfigService.delete(autoConfig.getId());
     }
 }

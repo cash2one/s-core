@@ -41,4 +41,11 @@ public class AutoConfigServiceImpl implements AutoConfigService {
             throw new IllegalArgumentException("Invalid config format!");
         }
     }
+
+    @Override
+    public void delete(Long id) {
+        logger.debug("deleting auto config, id={}", id);
+
+        autoConfigManager.delete(id);
+    }
 }

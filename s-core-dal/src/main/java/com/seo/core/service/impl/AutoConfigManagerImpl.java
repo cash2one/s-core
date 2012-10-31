@@ -44,4 +44,11 @@ public class AutoConfigManagerImpl implements AutoConfigManager {
 
         return autoConfigDAO.findOne(id);
     }
+
+    @Override
+    public void delete(Long id) {
+        logger.debug("deleting autoconfig by id={}", id);
+
+        autoConfigDAO.delete(id);
+    }
 }
