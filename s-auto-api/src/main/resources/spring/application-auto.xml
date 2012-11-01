@@ -19,6 +19,15 @@
 
     <bean id="jobRegistry" class="org.springframework.batch.core.configuration.support.MapJobRegistry" />
 
+    <bean id="jobOperator" class="org.springframework.batch.core.launch.support.SimpleJobOperator">
+        <property name="jobLauncher" ref="jobLauncher" />
+        <property name="jobRegistry" ref="jobRegistry" />
+        <property name="jobRepository" ref="jobRepository" />
+        <property name="jobExplorer" ref="jobExplorer" />
+    </bean>
+
+    <bean id="jobExplorer" class="org.springframework.batch.core.explore.support.JobExplorerFactoryBean" p:dataSource-ref="dataSource" p:tablePrefix="sauto_jobs.BATCH_"/>
+
     <bean class="org.springframework.batch.core.configuration.support.JobRegistryBeanPostProcessor">
         <property name="jobRegistry" ref="jobRegistry" />
     </bean>
