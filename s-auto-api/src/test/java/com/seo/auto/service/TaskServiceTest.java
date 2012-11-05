@@ -33,7 +33,7 @@ public class TaskServiceTest {
     private static final String TEST_CONFIG = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
             "<project xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"../../src/main/resources/config.xml.xsd\">\n" +
             "    <commands>\n" +
-            "        <save-image-command name=\"imagedata\" url=\"http://habrahabr.ru/core/captcha/\"/>\n" +
+            "        <save-image-command name=\"imagedata\" url=\"https://www.google.by/images/srpr/logo3w.png\"/>\n" +
             "        <load-useragent-command/>\n" +
             "    </commands>\n" +
             "</project>";
@@ -77,7 +77,7 @@ public class TaskServiceTest {
         assertNotNull(autoConfig);
         assertNotNull(autoConfig.getId());
 
-        List<CreateTaskResponseTO> responses = taskService.createTask(autoConfig.getId(), 1L);
+        List<CreateTaskResponseTO> responses = taskService.createTask(autoConfig.getId(), 5L);
 
         for (CreateTaskResponseTO response : responses) {
             validateTask(response);

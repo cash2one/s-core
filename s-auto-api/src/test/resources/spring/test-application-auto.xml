@@ -37,8 +37,8 @@
         <property name="jobRepository" ref="jobRepository" />
         <property name="taskExecutor">
             <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"
-                  p:corePoolSize="5"
-                  p:maxPoolSize="30" />
+                  p:corePoolSize="50"
+                  p:maxPoolSize="100"  />
         </property>
     </bean>
 </beans>
