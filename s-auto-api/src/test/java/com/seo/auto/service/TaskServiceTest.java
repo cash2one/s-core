@@ -17,6 +17,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -55,9 +58,41 @@ public class TaskServiceTest {
 
         CreateTaskResponseTO response = taskService.createTask(autoConfig.getId());
 
+        validateTask(response);
+
+        autoConfigService.delete(autoConfig.getId());
+    }
+
+    @Test
+    public void testCreateMultipleTasks() {
+        AutoConfig autoConfig = new AutoConfig();
+
+        autoConfig.setName("test autoconfig");
+        autoConfig.setConfig(TEST_CONFIG);
+
+        autoConfig = autoConfigService.save(autoConfig);
+
+        assertNotNull(autoConfig);
+        assertNotNull(autoConfig.getId());
+
+        List<CreateTaskResponseTO> responses = new ArrayList<CreateTaskResponseTO>();
+        for (int i = 0; i < 2; i++) {
+            CreateTaskResponseTO response = taskService.createTask(autoConfig.getId());
+
+            responses.add(response);
+        }
+
+        for (CreateTaskResponseTO response : responses) {
+            validateTask(response);
+        }
+
+        autoConfigService.delete(autoConfig.getId());
+    }
+
+    private void validateTask(CreateTaskResponseTO response) {
         TaskStatusResponseTO status = taskService.getTaskStatus(response.getTaskId());
 
-        while(status.isRunning()) {
+        while (status.isRunning()) {
             LOGGER.info("thread is still running");
 
             try {
@@ -70,7 +105,5 @@ public class TaskServiceTest {
         }
 
         assertEquals("COMPLETED", status.getTaskStatus());
-
-        autoConfigService.delete(autoConfig.getId());
     }
 }
