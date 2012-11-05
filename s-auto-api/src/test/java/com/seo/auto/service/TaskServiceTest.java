@@ -56,9 +56,11 @@ public class TaskServiceTest {
         assertNotNull(autoConfig);
         assertNotNull(autoConfig.getId());
 
-        CreateTaskResponseTO response = taskService.createTask(autoConfig.getId());
+        List<CreateTaskResponseTO> responses = taskService.createTask(autoConfig.getId(), 1L);
 
-        validateTask(response);
+        for (CreateTaskResponseTO response : responses) {
+            validateTask(response);
+        }
 
         autoConfigService.delete(autoConfig.getId());
     }
@@ -75,12 +77,7 @@ public class TaskServiceTest {
         assertNotNull(autoConfig);
         assertNotNull(autoConfig.getId());
 
-        List<CreateTaskResponseTO> responses = new ArrayList<CreateTaskResponseTO>();
-        for (int i = 0; i < 20; i++) {
-            CreateTaskResponseTO response = taskService.createTask(autoConfig.getId());
-
-            responses.add(response);
-        }
+        List<CreateTaskResponseTO> responses = taskService.createTask(autoConfig.getId(), 1L);
 
         for (CreateTaskResponseTO response : responses) {
             validateTask(response);

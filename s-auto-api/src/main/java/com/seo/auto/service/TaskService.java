@@ -7,7 +7,7 @@ import org.springframework.batch.core.JobExecution;
 import java.util.List;
 
 public interface TaskService {
-    CreateTaskResponseTO createTask(Long autoConfigId);
+    List<CreateTaskResponseTO> createTask(Long autoConfigId, Long times);
     List<String> listTasks();
     TaskStatusResponseTO getTaskStatus(Long taskId);
 }

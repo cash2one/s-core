@@ -38,7 +38,7 @@ public class TaskServiceImpl implements TaskService {
     private JobExplorer jobExplorer;
 
     @Override
-    public CreateTaskResponseTO createTask(Long autoConfigId) {
+    public List<CreateTaskResponseTO> createTask(Long autoConfigId, Long times) {
         AutoConfig autoConfig = autoConfigManager.findById(autoConfigId);
 
         if(autoConfig == null) {
@@ -47,9 +47,15 @@ public class TaskServiceImpl implements TaskService {
             throw new IllegalArgumentException("can't find autoconfig, id: " + autoConfigId);
         }
 
-        JobExecution jobExecution = jobRunner.runJob(autoConfig.getConfig());
+        List<CreateTaskResponseTO> responses = new ArrayList<CreateTaskResponseTO>();
+        for(int i=0; i<times; i++) {
+            JobExecution jobExecution = jobRunner.runJob(autoConfig.getConfig());
+            CreateTaskResponseTO response = new CreateTaskResponseTO(ResponseStatus.SUCCESS, jobExecution.getJobId(), jobExecution.getStatus().toString(), jobExecution.isRunning());
 
-        return new CreateTaskResponseTO(ResponseStatus.SUCCESS, jobExecution.getJobId(), jobExecution.getStatus().toString(), jobExecution.isRunning());
+            responses.add(response);
+        }
+
+        return responses;
     }
 
     @Override

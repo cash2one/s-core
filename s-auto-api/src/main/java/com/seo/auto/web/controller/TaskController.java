@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.inject.Inject;
+import java.util.List;
 
 @Controller
 @RequestMapping(value = "/tasks")
@@ -28,7 +29,7 @@ public class TaskController {
 
     @RequestMapping(value = "createTask", method = RequestMethod.POST)
     @ResponseBody
-    public CreateTaskResponseTO createTask(@RequestBody CreateTaskRequestTO request) {
-        return taskService.createTask(request.getAutoConfigId());
+    public List<CreateTaskResponseTO> createTask(@RequestBody CreateTaskRequestTO request) {
+        return taskService.createTask(request.getAutoConfigId(), request.getTimes());
     }
 }
