@@ -5,14 +5,14 @@ import com.seo.auto.web.model.enums.ResponseStatus;
 import java.util.List;
 
 public class ListTasksResponseTO extends BaseResponseTO {
-    private List<String> tasks;
+    private List<TaskStatusResponseTO> tasks;
 
-    public ListTasksResponseTO(ResponseStatus status, List<String> tasks) {
+    public ListTasksResponseTO(ResponseStatus status, List<TaskStatusResponseTO> tasks) {
         super(status);
         this.tasks = tasks;
     }
 
-    public List<String> getTasks() {
+    public List<TaskStatusResponseTO> getTasks() {
         return tasks;
     }
 }

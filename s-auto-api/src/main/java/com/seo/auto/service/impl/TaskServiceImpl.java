@@ -59,16 +59,18 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<String> listTasks() {
+    public List<TaskStatusResponseTO> listTasks() {
         Set<String> jobNames = jobOperator.getJobNames();
 
-        List<String> jobs = new ArrayList<String>();
+        List<TaskStatusResponseTO> jobs = new ArrayList<TaskStatusResponseTO>();
         for (String jobName : jobNames) {
             try {
                 Set<Long> ids = jobOperator.getRunningExecutions(jobName);
 
                 for (Long id : ids) {
-                    jobs.add(jobName + id);
+                    JobExecution jobExecution = jobExplorer.getJobExecution(id);
+
+                    jobs.add(new TaskStatusResponseTO(jobExecution.getJobId(), jobExecution.getStatus().toString(), jobExecution.isRunning()));
                 }
             } catch (NoSuchJobException e) {
                 logger.error("no such job: ", e);
