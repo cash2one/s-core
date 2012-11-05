@@ -76,7 +76,7 @@ public class TaskServiceTest {
         assertNotNull(autoConfig.getId());
 
         List<CreateTaskResponseTO> responses = new ArrayList<CreateTaskResponseTO>();
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 20; i++) {
             CreateTaskResponseTO response = taskService.createTask(autoConfig.getId());
 
             responses.add(response);
