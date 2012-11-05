@@ -2,11 +2,15 @@ package com.seo.auto.service.impl;
 
 import com.seo.auto.batch.runner.JobRunner;
 import com.seo.auto.service.TaskService;
+import com.seo.auto.web.model.CreateTaskResponseTO;
+import com.seo.auto.web.model.TaskStatusResponseTO;
+import com.seo.auto.web.model.enums.ResponseStatus;
 import com.seo.core.model.AutoConfig;
 import com.seo.core.service.AutoConfigManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.JobExecution;
+import org.springframework.batch.core.explore.JobExplorer;
 import org.springframework.batch.core.launch.JobOperator;
 import org.springframework.batch.core.launch.NoSuchJobException;
 
@@ -30,8 +34,11 @@ public class TaskServiceImpl implements TaskService {
     @Inject
     private JobOperator jobOperator;
 
+    @Inject
+    private JobExplorer jobExplorer;
+
     @Override
-    public JobExecution createTask(Long autoConfigId) {
+    public CreateTaskResponseTO createTask(Long autoConfigId) {
         AutoConfig autoConfig = autoConfigManager.findById(autoConfigId);
 
         if(autoConfig == null) {
@@ -40,7 +47,9 @@ public class TaskServiceImpl implements TaskService {
             throw new IllegalArgumentException("can't find autoconfig, id: " + autoConfigId);
         }
 
-        return jobRunner.runJob(autoConfig.getConfig());
+        JobExecution jobExecution = jobRunner.runJob(autoConfig.getConfig());
+
+        return new CreateTaskResponseTO(ResponseStatus.SUCCESS, jobExecution.getJobId(), jobExecution.getStatus().toString(), jobExecution.isRunning());
     }
 
     @Override
@@ -61,5 +70,12 @@ public class TaskServiceImpl implements TaskService {
         }
 
         return jobs;
+    }
+
+    @Override
+    public TaskStatusResponseTO getTaskStatus(Long taskId) {
+        JobExecution jobExecution = jobExplorer.getJobExecution(taskId);
+
+        return new TaskStatusResponseTO(jobExecution.getJobId(), jobExecution.getStatus().toString(), jobExecution.isRunning());
     }
 }

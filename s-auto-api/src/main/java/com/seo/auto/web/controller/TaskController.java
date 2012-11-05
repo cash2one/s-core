@@ -29,6 +29,6 @@ public class TaskController {
     @RequestMapping(value = "createTask", method = RequestMethod.POST)
     @ResponseBody
     public CreateTaskResponseTO createTask(@RequestBody CreateTaskRequestTO request) {
-        return new CreateTaskResponseTO(ResponseStatus.SUCCESS);
+        return taskService.createTask(request.getAutoConfigId());
     }
 }

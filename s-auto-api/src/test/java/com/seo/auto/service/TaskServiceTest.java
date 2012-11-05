@@ -1,5 +1,7 @@
 package com.seo.auto.service;
 
+import com.seo.auto.web.model.CreateTaskResponseTO;
+import com.seo.auto.web.model.TaskStatusResponseTO;
 import com.seo.core.model.AutoConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -51,19 +53,23 @@ public class TaskServiceTest {
         assertNotNull(autoConfig);
         assertNotNull(autoConfig.getId());
 
-        JobExecution jobExecution = taskService.createTask(autoConfig.getId());
+        CreateTaskResponseTO response = taskService.createTask(autoConfig.getId());
 
-        while(jobExecution.isRunning()) {
+        TaskStatusResponseTO status = taskService.getTaskStatus(response.getTaskId());
+
+        while(status.isRunning()) {
             LOGGER.info("thread is still running");
 
             try {
                 Thread.sleep(1000);
+
+                status = taskService.getTaskStatus(response.getTaskId());
             } catch (InterruptedException e) {
                 LOGGER.error("interrupted exception: ", e);
             }
         }
 
-        assertEquals(jobExecution.getStatus(), BatchStatus.COMPLETED);
+        assertEquals("COMPLETED", status.getTaskStatus());
 
         autoConfigService.delete(autoConfig.getId());
     }

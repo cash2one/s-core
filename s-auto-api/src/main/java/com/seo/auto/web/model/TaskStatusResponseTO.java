@@ -1,15 +1,14 @@
 package com.seo.auto.web.model;
 
-import com.seo.auto.web.model.enums.ResponseStatus;
-
-public class CreateTaskResponseTO extends BaseResponseTO {
+public class TaskStatusResponseTO {
     private Long taskId;
     private String taskStatus;
     private boolean running;
 
-    public CreateTaskResponseTO(ResponseStatus status, Long taskId, String taskStatus, boolean running) {
-        super(status);
+    public TaskStatusResponseTO() {
+    }
 
+    public TaskStatusResponseTO(Long taskId, String taskStatus, boolean running) {
         this.taskId = taskId;
         this.taskStatus = taskStatus;
         this.running = running;
