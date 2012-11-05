@@ -9,22 +9,19 @@ import com.seo.proxy.service.exception.ProxyServiceNotAvailableException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Qualifier;
 
 @Named
 public class ProxyProviderImpl implements ProxyProvider{
     private final static Logger LOGGER = LoggerFactory.getLogger(ProxyProviderImpl.class);
 
+    @Inject
+    @Named("httpProxyService")
     private ProxyService proxyService;
+    @Inject
     private ProxyCache proxyCache;
-
-    public void setProxyCache(ProxyCache proxyCache) {
-        this.proxyCache = proxyCache;
-    }
-
-    public void setProxyService(ProxyService proxyService) {
-        this.proxyService = proxyService;
-    }
 
     @Override
     public Proxy getProxy(String destination, ProxyType proxyType) throws ProxyNotAvailableException {
