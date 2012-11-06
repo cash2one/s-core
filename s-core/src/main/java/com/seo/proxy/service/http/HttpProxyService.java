@@ -102,7 +102,7 @@ public class HttpProxyService implements ProxyService {
     }
 
 
-    public void setHttpClientFactory(HttpClientFactory httpClientFactory) {
+    public synchronized void setHttpClientFactory(HttpClientFactory httpClientFactory) {
         this.httpClientFactory = httpClientFactory;
     }
 }
