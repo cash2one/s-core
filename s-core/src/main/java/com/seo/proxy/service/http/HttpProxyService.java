@@ -53,11 +53,12 @@ public class HttpProxyService implements ProxyService {
     }
 
     private void parseProxyList(String content) throws ProxyServiceNotAvailableException {
-        String[] lines = content.split(System.getProperty("line.separator"));
+        String[] lines = content.split("\n");
 
         for (String line : lines) {
             if(line.contains(PROXY_DELIMITER)) {
-                String[] proxyEntry = line.split(PROXY_DELIMITER);
+                LOGGER.debug("parsing proxy line: {}", line);
+                String[] proxyEntry = line.replaceAll("\"", "").split(PROXY_DELIMITER);
 
                 Proxy proxy = new Proxy(proxyEntry[0], Integer.valueOf(proxyEntry[1]), ProxyType.SOCKS);
 
