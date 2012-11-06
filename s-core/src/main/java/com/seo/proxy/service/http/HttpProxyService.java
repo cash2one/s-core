@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentSkipListSet;
 public class HttpProxyService implements ProxyService {
     private static final Logger LOGGER = LoggerFactory.getLogger(HttpProxyService.class);
 
-    private static final String PROXY_LIST_URL = "http://proxy.list.net:8070/load_proxy";
+    private static final String PROXY_LIST_URL = "http://66.232.118.26/proxies.php";
     public static final String PROXY_DELIMITER = ":";
 
     private final Set<Proxy> proxies = Collections.synchronizedSet(new HashSet<Proxy>());
