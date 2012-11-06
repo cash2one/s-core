@@ -34,6 +34,8 @@ public class ResponseParser {
         String content = null;
         try {
             content = EntityUtils.toString(httpResponse.getEntity(), encoding);
+
+            LOGGER.debug("successfully parsed content");
         } catch (IOException e) {
             LOGGER.error("IO error: " + e.getMessage());
 
