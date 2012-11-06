@@ -1,9 +1,7 @@
 package com.seo.auto.web.controller;
 
 import com.seo.auto.service.TaskService;
-import com.seo.auto.web.model.CreateTaskRequestTO;
-import com.seo.auto.web.model.CreateTaskResponseTO;
-import com.seo.auto.web.model.ListTasksResponseTO;
+import com.seo.auto.web.model.*;
 import com.seo.auto.web.model.enums.ResponseStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,5 +29,11 @@ public class TaskController {
     @ResponseBody
     public List<CreateTaskResponseTO> createTask(@RequestBody CreateTaskRequestTO request) {
         return taskService.createTask(request.getAutoConfigId(), request.getTimes());
+    }
+
+    @RequestMapping(value = "runTestTask", method = RequestMethod.POST)
+    @ResponseBody
+    public CreateTaskResponseTO runTestTask(@RequestBody RunTestTaskRequestTO request) {
+        return taskService.createTask(request.getConfig());
     }
 }

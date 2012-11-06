@@ -1,6 +1,7 @@
 package com.seo.auto.service.impl;
 
 import com.seo.auto.batch.runner.JobRunner;
+import com.seo.auto.facade.ConfigFacade;
 import com.seo.auto.service.TaskService;
 import com.seo.auto.web.model.CreateTaskResponseTO;
 import com.seo.auto.web.model.TaskStatusResponseTO;
@@ -36,6 +37,9 @@ public class TaskServiceImpl implements TaskService {
 
     @Inject
     private JobExplorer jobExplorer;
+
+    @Inject
+    private ConfigFacade configFacade;
 
     @Override
     public List<CreateTaskResponseTO> createTask(Long autoConfigId, Long times) {
@@ -85,5 +89,17 @@ public class TaskServiceImpl implements TaskService {
         JobExecution jobExecution = jobExplorer.getJobExecution(taskId);
 
         return new TaskStatusResponseTO(jobExecution.getJobId(), jobExecution.getStatus().toString(), jobExecution.isRunning());
+    }
+
+    @Override
+    public CreateTaskResponseTO createTask(String config) {
+        if(configFacade.validateConfig(config)) {
+            JobExecution jobExecution = jobRunner.runJob(config);
+            CreateTaskResponseTO response = new CreateTaskResponseTO(ResponseStatus.SUCCESS, jobExecution.getJobId(), jobExecution.getStatus().toString(), jobExecution.isRunning());
+
+            return response;
+        }
+
+        return new CreateTaskResponseTO(ResponseStatus.FAILURE, null, "invalid config", false);
     }
 }

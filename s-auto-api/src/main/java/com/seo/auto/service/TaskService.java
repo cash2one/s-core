@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface TaskService {
     List<CreateTaskResponseTO> createTask(Long autoConfigId, Long times);
+    CreateTaskResponseTO createTask(String config);
     List<TaskStatusResponseTO> listTasks();
     TaskStatusResponseTO getTaskStatus(Long taskId);
 }
