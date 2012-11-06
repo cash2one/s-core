@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../src/main/resources/config.xml.xsd">
+    <commands>
+        <load-useragent-command/>
+
+        <load-proxy-command/>
+
+        <get-request-command url="http://qip.ru/"/>
+
+        <get-request-command url="http://qip.ru/reg/register" referer="http://qip.ru">
+            <extract-commands>
+                <extract-xpath-variable name="name_1" query="//form[@class='form']/span[last()]/input[1]" field="name"/>
+                <extract-xpath-variable name="value_1" query="//form[@class='form']/span[last()]/input[1]" field="value"/>
+                <extract-xpath-variable name="name_2" query="//form[@class='form']/span[last()]/input[2]" field="name"/>
+                <extract-xpath-variable name="value_2" query="//form[@class='form']/span[last()]/input[2]" field="value"/>
+                <extract-xpath-variable name="name_3" query="//form[@class='form']/span[last()]/input[3]" field="name"/>
+                <extract-xpath-variable name="value_3" query="//form[@class='form']/span[last()]/input[3]" field="value"/>
+            </extract-commands>
+        </get-request-command>
+    </commands>
+</project>
