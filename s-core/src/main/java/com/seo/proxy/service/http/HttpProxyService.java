@@ -57,7 +57,6 @@ public class HttpProxyService implements ProxyService {
 
         for (String line : lines) {
             if(line.contains(PROXY_DELIMITER)) {
-                LOGGER.debug("parsing proxy line: {}", line);
                 String[] proxyEntry = line.replaceAll("\"", "").split(PROXY_DELIMITER);
 
                 Proxy proxy = new Proxy(proxyEntry[0], Integer.valueOf(proxyEntry[1]), ProxyType.SOCKS);
